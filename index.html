@@ -458,6 +458,155 @@ h2.sec{scroll-margin-top:130px}
 .lf2{display:grid; grid-template-columns:1fr 1fr; gap:16px} .lf3{display:grid; grid-template-columns:1.4fr 1fr; gap:16px} @media(max-width:900px){ .lf2,.lf3{grid-template-columns:1fr} }
 [hidden]{display:none !important}
 .camph{aspect-ratio:auto; min-height:220px}
+/* ================= Python: 5 заданий ================= */
+.pyhow{display:flex; gap:6px; flex-wrap:wrap; margin-top:14px; position:relative; z-index:1}
+.pyhow span{font-weight:800; font-size:13px; padding:7px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.32)}
+.pysteps{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; margin:4px 0 14px; scroll-margin-top:130px}
+.pystep{display:flex; gap:10px; align-items:center; text-align:left; border:2px solid var(--line); background:var(--card); color:var(--text); border-radius:16px; padding:10px; cursor:pointer; font:inherit; transition:.2s; min-width:0}
+.pystep:hover:not(.lock){border-color:var(--brand2); transform:translateY(-2px)}
+.pystep .n{width:36px; height:36px; border-radius:12px; display:grid; place-items:center; font:700 15px Unbounded,sans-serif; background:var(--bg2); color:var(--dim); flex-shrink:0}
+.pystep .tx{min-width:0} .pystep b{display:block; font-size:13px; line-height:1.2} .pystep small{display:block; font-size:11.5px; color:var(--dim); font-weight:700}
+.pystep.cur{border-color:var(--brand2); box-shadow:0 6px 18px color-mix(in srgb,var(--brand2) 25%,transparent)}
+.pystep.cur .n{background:linear-gradient(135deg,var(--brand2),#6366f1); color:#fff}
+.pystep.done .n{background:linear-gradient(135deg,#fde047,#f59e0b); color:#fff; font-size:17px}
+.pystep.lock{opacity:.5; cursor:not-allowed}
+@media(max-width:860px){ .pystep{flex-direction:column; justify-content:center; padding:8px 4px; gap:4px; text-align:center} .pystep .tx b{font-size:11px} .pystep small{display:none} }
+@media(max-width:480px){ .pystep .tx{display:none} .pystep{padding:7px 4px} }
+.pyt{padding:20px}
+@media(max-width:520px){ .pyt{padding:14px} }
+.pyt-top{display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+.pyt-k{font-size:12px; font-weight:800; letter-spacing:.6px; text-transform:uppercase; color:var(--brand2)}
+.pyt-h{font:700 22px Unbounded,sans-serif; margin:6px 0 10px; display:flex; gap:10px; align-items:center; line-height:1.2}
+.pyt-e{font-size:28px}
+.pyt-goal{font-size:15.5px; padding:10px 14px; border-radius:14px; background:color-mix(in srgb,#f59e0b 12%,transparent); border-left:4px solid #f59e0b; margin-bottom:16px}
+.pyt-grid{display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:20px; align-items:start}
+@media(max-width:900px){ .pyt-grid{grid-template-columns:1fr; gap:14px} }
+.pyt-right{position:sticky; top:130px}
+@media(max-width:900px){ .pyt-right{position:static} }
+.pyt-lh{font:700 15px Unbounded,sans-serif; margin-bottom:6px}
+.pyt-learn{background:var(--bg2); border-radius:16px; padding:14px}
+.pyt-learn p{font-size:14.5px}
+.pyt-learn code{font:600 13px 'JetBrains Mono',monospace; background:var(--card); padding:1px 6px; border-radius:6px}
+.pyt-ex{display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:8px; margin-top:10px}
+@media(max-width:520px){ .pyt-ex{grid-template-columns:1fr} }
+.pyt-ex pre{font:500 13px/1.55 'JetBrains Mono',monospace; background:#0b1a10; color:#d1fae5; border-radius:12px; padding:10px 12px; white-space:pre-wrap; margin:0}
+.pyt-exo{font:600 13px/1.55 'JetBrains Mono',monospace; background:var(--card); border:1px dashed var(--line); border-radius:12px; padding:8px 12px 10px; white-space:pre-wrap}
+.pyt-exo small{display:block; font-family:Manrope,sans-serif; color:var(--dim); font-weight:800; font-size:11px; text-transform:uppercase; letter-spacing:.4px}
+.pyt-sub{font-size:13.5px; color:var(--dim); margin-bottom:8px}
+.pyt-code{background:#0b1a10; border:1px solid #14532d; border-radius:14px; padding:8px 6px; font:500 14px/1.5 'JetBrains Mono',Consolas,monospace; color:#d1fae5; overflow-x:auto}
+.pyt-code .ln{display:flex; align-items:center; min-height:34px}
+.pyt-code .lno{width:22px; flex-shrink:0; text-align:right; color:#4b6b57; font-size:12px; margin-right:10px; user-select:none}
+.pyt-code .lc{white-space:pre}
+.st{color:#86efac}
+.gap{font:700 14px 'JetBrains Mono',Consolas,monospace; min-width:56px; height:30px; padding:0 9px; border-radius:9px; border:2px dashed #fbbf24; background:rgba(251,191,36,.12); color:#fde68a; cursor:pointer; vertical-align:middle; transition:.2s; white-space:pre}
+.gap i{font-style:normal; display:inline-grid; place-items:center; width:18px; height:18px; border-radius:50%; background:#fbbf24; color:#0b1a10; font-size:11px; margin-right:4px; vertical-align:1px}
+.gap.fill{border-style:solid; border-color:#38bdf8; background:rgba(56,189,248,.16); color:#e0f2fe}
+.gap.act{box-shadow:0 0 0 3px rgba(251,191,36,.5); border-color:#fbbf24}
+.gap.bad{border-color:#f87171; background:rgba(248,113,113,.2); box-shadow:0 0 0 3px rgba(248,113,113,.35); animation:shk2 .4s}
+@keyframes shk2{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.ind{color:#4b6b57}
+.pyt-pal{margin-top:10px; background:var(--bg2); border-radius:14px; padding:10px 12px}
+.pal-h{font-size:13px; font-weight:800; color:var(--dim); margin-bottom:8px}
+.pal-h .gnum{display:inline-grid; place-items:center; width:20px; height:20px; border-radius:50%; background:#fbbf24; color:#0b1a10; font-size:11.5px}
+.pal{display:flex; gap:8px; flex-wrap:wrap}
+.tok{font:700 15px 'JetBrains Mono',Consolas,monospace; min-height:44px; padding:0 16px; border-radius:12px; border:2px solid var(--line); background:var(--card); color:var(--text); cursor:pointer; white-space:pre; transition:.15s; box-shadow:0 3px 0 var(--line)}
+.tok:hover{border-color:var(--brand2); transform:translateY(-2px)}
+.tok.on{border-color:var(--brand2); background:color-mix(in srgb,var(--brand2) 14%,var(--card)); box-shadow:0 3px 0 var(--brand2)}
+.tok .ind{color:var(--dim); opacity:.7}
+.pyt-btns{margin-top:12px}
+.pyt-btns .pri{height:46px; padding:0 22px; font-size:15px}
+.pyt-stage{position:relative; border-radius:16px; overflow:hidden; background:#10301a; aspect-ratio:360/230}
+.pyt-stage svg{display:block; width:100%; height:100%}
+.pybub{position:absolute; left:50%; top:7%; transform:translateX(-50%); background:#fff; color:#0f172a; font-weight:800; font-size:14px; padding:8px 14px; border-radius:14px; box-shadow:0 6px 18px rgba(0,0,0,.2); white-space:nowrap; max-width:92%; overflow:hidden; text-overflow:ellipsis; opacity:0; transition:opacity .3s}
+.pybub.on{opacity:1; animation:pop .35s}
+.pychips{position:absolute; left:8px; right:8px; bottom:6px; display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end; pointer-events:none}
+.pychips.top{top:6px; bottom:auto}
+.pychips span{font:700 12px 'JetBrains Mono',monospace; background:rgba(15,23,42,.88); color:#fff; padding:4px 10px; border-radius:999px; animation:pop .35s}
+.pychips span.bad{background:#dc2626} .pychips span.ok{background:#16a34a} .pychips span.hl{background:#d97706}
+.pyt-con{margin-top:10px; background:#0b1220; border-radius:14px; overflow:hidden; border:1px solid #1e293b}
+.pyt-ch{font:700 12px Manrope,sans-serif; color:#94a3b8; padding:7px 12px; background:#111a2e; display:flex; gap:8px; align-items:center}
+.pyt-ch span{color:#f87171; letter-spacing:2px; font-size:9px}
+#pyCon{font:500 13.5px/1.5 'JetBrains Mono',Consolas,monospace; color:#e2e8f0; padding:10px 12px; min-height:84px; max-height:190px; overflow:auto}
+#pyCon .cl{white-space:pre-wrap; word-break:break-word; animation:fade .25s}
+#pyCon .sys{color:#7c8ba1} #pyCon .err{color:#f87171}
+.pyt-fb{margin-top:10px; border-radius:14px; padding:12px 14px; font-size:14.5px; display:none}
+.pyt-fb.on{display:block; animation:pop .3s}
+.pyt-fb.ok{background:color-mix(in srgb,var(--ok) 13%,var(--card)); border:2px solid var(--ok)}
+.pyt-fb.bad{background:color-mix(in srgb,#f59e0b 12%,var(--card)); border:2px solid #f59e0b}
+.pyt-fb.tip,.pyt-fb.run{background:color-mix(in srgb,var(--brand2) 10%,var(--card)); border:2px solid color-mix(in srgb,var(--brand2) 45%,transparent)}
+.pyt-fb .fbh{font:700 15px Unbounded,sans-serif; margin-bottom:4px}
+.pyt-fb small{display:block; color:var(--dim); margin-top:6px}
+.pyt-fb .row{margin:10px 0 0}
+.pyt-nav{display:flex; justify-content:space-between; gap:8px; margin-top:18px; border-top:1px dashed var(--line); padding-top:14px; flex-wrap:wrap}
+.pyt-nav button:disabled{opacity:.5; cursor:not-allowed}
+.pycheat{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px}
+.pycheat>div{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:12px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px}
+.pycheat>div.done{border-color:#f59e0b}
+.pycheat .pch{display:flex; gap:8px; align-items:center} .pycheat .pch span{width:24px; height:24px; border-radius:8px; display:grid; place-items:center; background:var(--bg2); font:700 12px Unbounded,sans-serif; color:var(--dim)} .pycheat .pch em{margin-left:auto; font-style:normal}
+.pycheat pre{font:500 12.5px/1.5 'JetBrains Mono',monospace; background:#0b1a10; color:#d1fae5; border-radius:10px; padding:8px 10px; white-space:pre-wrap; margin:0}
+.pycheat p{font-size:13px; color:var(--dim)}
+.pynote{color:var(--dim); font-size:13px; margin-top:10px}
+@media(max-width:520px){ .pyt-h{font-size:18px} .pyt-code{font-size:12.5px} .gap{font-size:12.5px; min-width:48px; padding:0 7px} .pyt-code .lno{width:16px; margin-right:6px} .pyt-goal{font-size:14.5px} }
+/* сцена с дроном */
+.drn{transition-property:transform; transition-timing-function:cubic-bezier(.45,.05,.3,1)}
+.drn-b{animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-3px)}}
+.drn.shk .drn-b{animation:shk3 .35s 3}
+@keyframes shk3{25%{transform:translateX(-5px) rotate(-10deg)}75%{transform:translateX(5px) rotate(10deg)}}
+.drn-tag{transition:opacity .25s}
+.c2{fill:transparent; transition:fill .2s}
+.c2.on{fill:#86efac} .c2.seed{fill:url(#t2p)}
+.p3 .soil{transition:fill .9s}
+.rain{opacity:0; transition:opacity .25s} .rn .rain{opacity:1}
+.rain line{animation:drop .45s linear infinite}
+@keyframes drop{from{transform:translateY(-8px); opacity:0} 40%{opacity:1} to{transform:translateY(22px); opacity:0}}
+.sprout{opacity:0; transition:opacity .6s .4s} .wat .sprout{opacity:1}
+.mk{opacity:0; transition:opacity .3s} .mk.on{opacity:1}
+.phf{opacity:0} .phf.on{animation:phf .7s}
+@keyframes phf{0%{opacity:.85} 100%{opacity:0}}
+.ring{opacity:0; transition:opacity .3s} .sick .ring{opacity:1}
+.okm{opacity:0; transition:opacity .3s} .okp .okm{opacity:1}
+
+/* ================= ИИ-лаборатория: понятные опыты ================= */
+.lroute{margin-top:14px; position:relative; z-index:1}
+.lroute>b{font-size:13px; opacity:.92; display:block; margin-bottom:6px}
+.lroute>div{display:flex; gap:6px; flex-wrap:wrap}
+.lroute button{color:#fff; font:800 13px Manrope,sans-serif; padding:7px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.32); cursor:pointer; transition:.2s}
+.lroute button:hover{background:rgba(255,255,255,.3); transform:translateY(-2px)}
+.lroute button.ok{background:#fff; color:#0f766e; border-color:#fff}
+.howto{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:14px 16px; box-shadow:var(--shadow); margin-bottom:10px}
+.hw-what{font-size:15px; line-height:1.45; display:flex; gap:10px; align-items:baseline; flex-wrap:wrap}
+.hw-what>span:last-child{flex:1; min-width:220px}
+.hw-tag{font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; padding:4px 10px; border-radius:999px; background:linear-gradient(135deg,#0f766e,#6366f1); color:#fff; white-space:nowrap}
+.hw-steps{list-style:none; counter-reset:hw; display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px}
+@media(max-width:760px){ .hw-steps{grid-template-columns:1fr} }
+.hw-steps li{counter-increment:hw; display:flex; gap:10px; align-items:flex-start; font-size:14px; background:var(--bg2); border-radius:14px; padding:10px 12px}
+.hw-steps li::before{content:counter(hw); width:26px; height:26px; border-radius:50%; display:grid; place-items:center; flex-shrink:0; font:700 13px Unbounded,sans-serif; background:var(--card); color:#0f766e; border:2px solid #0f766e}
+:root[data-theme="dark"] .hw-steps li::before{color:#5eead4; border-color:#5eead4}
+.goalbar{display:flex; gap:12px; align-items:center; border-radius:16px; padding:12px 14px; margin-bottom:12px; border:2px dashed color-mix(in srgb,#f59e0b 65%,transparent); background:color-mix(in srgb,#f59e0b 9%,var(--card)); font-size:14.5px}
+.goalbar .gi{font-size:24px; line-height:1}
+.goalbar .gt{flex:1; min-width:0}
+.goalbar .gx{font-weight:800; font-size:12.5px; padding:5px 10px; border-radius:999px; background:linear-gradient(135deg,#f59e0b,#ef4444); color:#fff; white-space:nowrap}
+.goalbar.done{border-style:solid; border-color:var(--ok); background:color-mix(in srgb,var(--ok) 12%,var(--card)); animation:pop .4s}
+.goalbar.done .gx{background:var(--ok)}
+.goalbar .ibtn{margin-top:8px}
+@media(max-width:520px){ .goalbar{flex-wrap:wrap; align-items:flex-start} .goalbar .gt{flex:1 1 calc(100% - 40px)} .goalbar .gx{margin-left:36px} }
+.steps3 button{border:none; font:800 13px Manrope,sans-serif; padding:6px 12px; border-radius:999px; background:var(--bg2); color:var(--dim); cursor:pointer}
+.steps3 button.on{background:linear-gradient(135deg,#0f766e,#6366f1); color:#fff}
+.steps3 button:disabled{opacity:.55; cursor:not-allowed}
+.nrow2{display:grid; grid-template-columns:1fr 46px; gap:2px 10px; align-items:center; margin:10px 0}
+.nrow2 .nlab{grid-column:1/-1; font-size:14px} .nrow2 .nlab small{color:var(--dim); margin-left:6px; font-size:12.5px}
+.nrow2 b.nv{font-family:'JetBrains Mono',monospace; text-align:right}
+.nhint{font-size:14px; padding:10px 12px; border-radius:12px; background:color-mix(in srgb,var(--brand2) 10%,transparent); margin-top:8px}
+.dterms{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:8px; margin-bottom:12px; align-items:start}
+.dterm{display:grid; grid-template-columns:34px 1fr; gap:4px 10px; align-items:center; text-align:left; border:1px solid var(--line); background:var(--card); color:var(--text); border-radius:14px; padding:10px 12px; cursor:pointer; font:inherit; box-shadow:var(--shadow); transition:border-color .2s}
+.dterm:hover{border-color:#0f766e}
+.dterm .de{font-size:24px} .dterm b{display:block; font-size:14.5px} .dterm small{color:var(--dim); font-size:12.5px}
+.dterm .dmore{grid-column:1/-1; font-size:13.5px; display:none; padding-top:8px; border-top:1px dashed var(--line); margin-top:4px}
+.dterm .dmore em{display:block; color:var(--dim); font-style:normal; font-size:12.5px; margin-top:4px}
+.dterm.open{border-color:#0f766e; box-shadow:0 0 0 2px color-mix(in srgb,#0f766e 25%,transparent)} .dterm.open .dmore{display:block}
+.dq-start{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+.dq-def{font-size:15.5px; background:var(--bg2); border-radius:12px; padding:12px 14px; margin-bottom:12px; font-weight:600}
 </style>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#16a34a">
@@ -534,75 +683,20 @@ h2.sec{scroll-margin-top:130px}
     <div class="phero pyh">
       <div class="phx">
         <div class="k">Лаборатория Python</div>
-        <h1>Научи дрон летать кодом</h1>
-        <p>Пиши программу - дрон выполняет её на поле. К каждой строке есть пояснение, так что разобраться сможет любой. Проходи миссии, собирай звёзды и прокачивай уровень.</p>
-        <div class="jump"><a href="#simT">▶ Тренажёр</a><a href="#missions">🎯 Миссии</a><a href="#cheat">🧠 Шпаргалка</a><a href="#pyquiz">❓ Проверь себя</a><a href="#fieldT">🌾 Анализ поля</a></div>
+        <h1>5 шагов в Python вместе с агродроном</h1>
+        <p>Ничего не нужно устанавливать. В каждом задании есть короткое объяснение с примером и программа с пропусками. Собери её из готовых кусочков, нажми "▶ Запустить" и посмотри, что сделает дрон.</p>
+        <div class="pyhow"><span>1. Прочитай пример</span><span>2. Заполни пропуски</span><span>3. Запусти</span><span>4. Получи ⭐ и XP</span></div>
       </div>
       <div class="xpcard" id="xpPy"></div>
     </div>
-    <div class="show" id="show"></div>
 
-    <h2 class="sec" id="simT">1. Тренажёр полёта <small>выбери программу, нажми ▶ и следи за пояснениями</small></h2>
-    <div class="lab">
-      <div class="card">
-        <div class="row" style="margin-top:0"><b style="flex:1">Код программы</b><div class="fsel" id="presetSel"></div></div>
-        <div class="pdesc" id="pDesc"></div>
-        <textarea class="code" id="src" spellcheck="false"></textarea>
-        <div class="row"><button class="ibtn pri" id="runBtn">▶ Запустить</button><button class="ibtn sm" id="stopBtn">■ Стоп</button><button class="ibtn sm" id="explBtn">🧠 Пояснения: вкл</button></div>
-        <details class="cmds"><summary>Какие команды понимает дрон</summary>
-          <div class="cmdg">
-            <span><code>takeoff()</code> взлёт</span><span><code>land()</code> посадка</span>
-            <span><code>forward(3)</code> вперёд, м</span><span><code>back(3)</code> назад, м</span>
-            <span><code>left(2)</code> влево, м</span><span><code>right(2)</code> вправо, м</span>
-            <span><code>turn(90)</code> поворот, градусы</span><span><code>photo()</code> снимок</span>
-            <span><code>for i in range(4):</code> повторить</span><span><code>n = 5</code> переменная</span>
-            <span><code>print("Привет")</code> вывод</span><span><code># текст</code> комментарий</span>
-          </div></details>
-        <div class="expl" id="expl"></div>
-      </div>
-      <div class="card simcard">
-        <div class="tele" id="tele"></div>
-        <canvas id="sim" width="560" height="420"></canvas>
-        <div class="nowstep" id="nowStep">Здесь будет видно, какую строку дрон выполняет прямо сейчас.</div>
-        <div class="out" id="simOut">Нажми "Запустить" - дрон полетит по твоей программе.</div>
-      </div>
-    </div>
-    <p style="color:var(--dim);font-size:13px;margin-top:8px">Это учебный тренажёр: язык как в Python, но упрощённый. Настоящий дрон (API DroneCam) изучаем в модуле 7 - логика та же.</p>
+    <h2 class="sec" id="pyTasks">Задания <small id="pyCnt"></small></h2>
+    <div class="pysteps" id="pySteps"></div>
+    <div id="pyTask"></div>
 
-    <h2 class="sec" id="missions">2. Миссии <small>выполни задание - получи звезду и XP</small></h2>
-    <div class="missions" id="missionsL"></div>
-
-    <h2 class="sec" id="cheat">3. Шпаргалка: Python за 10 карточек <small>нажми на карточку - она перевернётся</small></h2>
-    <div class="flips" id="flips"></div>
-
-    <h2 class="sec" id="pyquiz">4. Проверь себя: что сделает код? <small>10 вопросов, за каждый верный ответ +5 XP</small></h2>
-    <div class="card" id="pyQuiz"></div>
-
-    <h2 class="sec" id="fieldT">5. Найди проблемные участки поля по фото <small>так работает "зрение" агродрона</small></h2>
-    <div class="lab">
-      <div class="card"><canvas id="fieldC" width="560" height="340"></canvas>
-        <div class="row"><b>Порог "здоровой зелени":</b><span id="thrV" style="font-weight:800;color:var(--brand)"></span></div>
-        <input type="range" class="range" id="thr" min="-20" max="80" value="25">
-        <div class="meter"><div><small>Здоровые посевы</small><b id="mOk" style="color:var(--ok)">0%</b></div><div><small>Проблемные зоны</small><b id="mBad" style="color:var(--warn)">0%</b></div><div><small>Решение</small><b id="mAct" style="font-size:15px">-</b></div></div>
-        <div class="row"><button class="ibtn sm" id="newField">Новое поле</button><button class="ibtn sm" id="showMask">Показать карту зон</button></div>
-      </div>
-      <div class="card"><b>Как это работает - разбор по строкам</b>
-        <div class="annot">
-          <div><pre class="code"><span class="cm"># Фото поля с дрона - это сетка пикселей</span></pre><p>Каждый пиксель хранит три числа: сколько в нём красного (R), зелёного (G) и синего (B).</p></div>
-          <div><pre class="code"><span class="fn">здоровых</span> = <span class="num2">0</span></pre><p>Заводим счётчик. Сначала здоровых пикселей ноль.</p></div>
-          <div><pre class="code"><span class="kw">for</span> пиксель <span class="kw">in</span> фото:
-    r, g, b = пиксель</pre><p>Перебираем все пиксели по одному и достаём из каждого три цвета.</p></div>
-          <div><pre class="code">    индекс = <span class="num2">2</span>*g - r - b</pre><p>"Индекс зелени": удваиваем зелёный и вычитаем остальные цвета. У живого растения он большой.</p></div>
-          <div><pre class="code">    <span class="kw">if</span> индекс &gt; порог:
-        здоровых += <span class="num2">1</span></pre><p>Если зелени больше порога (ползунок слева) - засчитываем пиксель как здоровый.</p></div>
-          <div><pre class="code">процент = здоровых / <span class="fn">len</span>(фото) * <span class="num2">100</span></pre><p>Делим здоровые пиксели на все и получаем процент здорового поля.</p></div>
-        </div>
-        <p style="margin-top:10px">Растения отражают много зелёного света, а сухая трава и земля - больше красного. Агрономы используют похожие индексы (например, NDVI с инфракрасной камерой), чтобы заранее найти, где посевам плохо.</p>
-      </div>
-    </div>
-
-    <h2 class="sec">6. Где живёт Python <small>зачем он в жизни, а не только на уроке</small></h2>
-    <div class="life" id="life"></div>
+    <h2 class="sec" id="cheat">Шпаргалка <small>всё, что ты узнаешь в заданиях, на одном экране</small></h2>
+    <div class="pycheat" id="pyCheat"></div>
+    <p class="pynote">Это тренажёр: программы написаны по правилам Python, но выполняются прямо в браузере, даже без интернета. Настоящий дрон программируем в модуле 7 - логика там та же.</p>
 
     <h2 class="sec">Опрос <small>ответ анонимный - смотри, что думают другие</small></h2>
     <div class="card poll" id="pollPy" data-poll="py_level" data-q="Python для тебя сейчас - это..."></div>
@@ -660,67 +754,114 @@ h2.sec{scroll-margin-top:130px}
     <div class="phero labh">
       <div class="phx">
         <div class="k">ИИ-лаборатория</div>
-        <h1>Загляни внутрь нейросети</h1>
-        <p>Здесь ты сам настроишь нейрон, обучишь модель отличать больные листья от здоровых, увидишь, как компьютер "смотрит" на фото, и проверишь растения камерой телефона. Никакой магии - только логика и числа.</p>
-        <div class="jump"><a href="#neuT">🧠 Нейрон</a><a href="#leafT">🍃 Обучи модель</a><a href="#convT">🔍 Как ИИ видит</a><a href="#camT">📷 Камера</a><a href="#aiagT">🌾 ИИ в агро</a><a href="#dictT">📖 Словарь</a></div>
+        <h1>Как учится искусственный интеллект</h1>
+        <p>5 опытов, иди сверху вниз. В каждом написано, что делаем, шаги 1-2-3 и цель. Выполнил цель - получил XP и галочку в маршруте.</p>
+        <div class="lroute" id="labRoute"></div>
       </div>
       <div class="xpcard"></div>
     </div>
 
-    <h2 class="sec" id="neuT">1. Нейрон своими руками <small>подбери веса - и нейрон начнёт принимать решения</small></h2>
+    <h2 class="sec" id="neuT">1. Нейрон: поливать поле или нет? <small>около 5 минут</small></h2>
+    <div class="howto">
+      <div class="hw-what"><span class="hw-tag">Что делаем</span><span>Настраиваем один "нейрон" - самую маленькую часть нейросети, чтобы он сам решал, нужен ли полив.</span></div>
+      <ol class="hw-steps">
+        <li>Посмотри на таблицу: в колонке "Нужно" стоит правильный ответ агронома.</li>
+        <li>Двигай ползунки. Каждый ползунок - "вес": он показывает, за полив признак или против.</li>
+        <li>Добейся, чтобы в колонке "Нейрон" во всех строках стояла ✓.</li>
+      </ol>
+    </div>
+    <div class="goalbar" id="gNeu"></div>
     <div class="neu">
       <div class="card">
-        <b>Задача: поливать поле сегодня или нет?</b>
-        <p style="color:var(--dim);font-size:14px;margin:4px 0 8px">Нейрон смотрит на три признака, умножает каждый на свой <b>вес</b>, складывает и прибавляет <b>смещение</b>. Если сумма больше нуля - "поливаем". Двигай ползунки весов.</p>
+        <div class="steps3" id="nLvl"></div>
         <div id="nW"></div>
-        <div class="row"><button class="ibtn pri" id="nTrain">🤖 Обучить автоматически</button><button class="ibtn sm" id="nStep">Один шаг обучения</button><button class="ibtn sm" id="nReset">Сбросить</button></div>
-        <div class="formula2" id="nForm"></div>
+        <div class="nhint" id="nOut"></div>
+        <div class="row"><button class="ibtn sm" id="nTrain">🤖 Пусть учится сам</button><button class="ibtn sm" id="nReset">↺ Сбросить</button></div>
       </div>
       <div class="card">
         <svg class="nsvg" id="nSvg" viewBox="0 0 420 200"></svg>
+        <div class="formula2" id="nForm"></div>
         <table class="ntab" id="nTab"></table>
-        <div class="out" id="nOut">Цель: чтобы нейрон правильно ответил во всех 8 ситуациях.</div>
       </div>
     </div>
 
-    <h2 class="sec" id="leafT">2. Обучи модель отличать больной лист <small>ты - учитель, а компьютер - ученик</small></h2>
+    <h2 class="sec" id="leafT">2. Обучи модель: лист больной или здоровый? <small>около 5 минут</small></h2>
+    <div class="howto">
+      <div class="hw-what"><span class="hw-tag">Что делаем</span><span>Ты - учитель, компьютер - ученик. Ты показываешь ему примеры, а потом он сдаёт экзамен на новых листьях.</span></div>
+      <ol class="hw-steps">
+        <li>Нажимай на каждый лист: 1 раз - "здоров", 2 раза - "болен". Больной лист жёлтый и в пятнах.</li>
+        <li>Нажми "Обучить модель" и посмотри, как компьютер разложил листья по двум признакам.</li>
+        <li>Нажми "Экзамен": модель сама проверит 10 новых листьев, которых ещё не видела.</li>
+      </ol>
+    </div>
+    <div class="goalbar" id="gLeaf"></div>
     <div class="card">
       <div class="steps3" id="lfSteps"><span class="on">1. Разметка</span><span>2. Обучение</span><span>3. Экзамен</span></div>
       <div id="lfBody"></div>
     </div>
 
-    <h2 class="sec" id="convT">3. Как ИИ "видит" фото: свёртка <small>наведи на картинку - увидишь вычисление для одного пикселя</small></h2>
+    <h2 class="sec" id="convT">3. Как ИИ "видит" фото <small>около 3 минут</small></h2>
+    <div class="howto">
+      <div class="hw-what"><span class="hw-tag">Что делаем</span><span>Смотрим, как нейросеть находит на снимке поля края, рядки и пятна с помощью фильтров.</span></div>
+      <ol class="hw-steps">
+        <li>Нажимай на названия фильтров и смотри, как меняется правая картинка.</li>
+        <li>Проведи пальцем или мышкой по левой картинке - появится расчёт для одной точки.</li>
+        <li>Найди фильтр, на котором лучше всего видны тёмные пятна (больные места на поле).</li>
+      </ol>
+    </div>
+    <div class="goalbar" id="gConv"></div>
     <div class="conv">
       <div class="card">
+        <div class="chips" id="cvK" style="margin-bottom:10px"></div>
         <div class="convimgs"><div><canvas id="cvA" width="96" height="72"></canvas><small>Фото поля (яркость)</small></div><div><canvas id="cvB" width="96" height="72"></canvas><small id="cvBl">После фильтра</small></div></div>
-        <div class="row"><button class="ibtn sm" id="cvNew">Новое фото</button><small style="color:var(--dim)">Так первые слои нейросети находят края, линии и пятна.</small></div>
+        <p style="font-size:13.5px;color:var(--dim);margin-top:8px" id="cvD"></p>
+        <div class="row"><button class="ibtn sm" id="cvNew">Другое фото</button></div>
       </div>
       <div class="card">
-        <b>Фильтр (ядро 3 на 3)</b>
-        <div class="chips" id="cvK" style="margin:8px 0"></div>
+        <b>Фильтр - это табличка 3 на 3</b>
+        <p style="font-size:13px;color:var(--dim);margin:4px 0 8px">Каждый пиксель умножается на число из таблички, всё складывается. Числа можно менять - получится свой фильтр.</p>
         <div class="kgrid" id="cvG"></div>
-        <p style="font-size:13px;color:var(--dim);margin-top:8px" id="cvD"></p>
-        <b style="display:block;margin-top:10px;font-size:14px">Окно 3 на 3 под курсором</b>
+        <b style="display:block;margin-top:10px;font-size:14px">Пиксели под пальцем (окно 3 на 3)</b>
         <div class="mgrid" id="cvM"></div>
-        <div class="formula2" id="cvF">Наведи мышку или палец на левую картинку.</div>
+        <div class="formula2" id="cvF">Проведи пальцем или мышкой по левой картинке.</div>
       </div>
     </div>
 
-    <h2 class="sec" id="camT">4. Живая камера: где растению хорошо? <small>видео не уходит в интернет - всё считается в телефоне</small></h2>
+    <h2 class="sec" id="camSec">4. Живая камера: где зелень? <small>по желанию, если есть камера</small></h2>
+    <div class="howto">
+      <div class="hw-what"><span class="hw-tag">Что делаем</span><span>Включаем камеру, и программа сама подсвечивает растения зелёным. Видео никуда не отправляется и работает даже без интернета.</span></div>
+      <ol class="hw-steps">
+        <li>Нажми "Включить камеру" и разреши доступ к ней.</li>
+        <li>Наведи камеру на растение, траву или лист.</li>
+        <li>Двигай ползунок "Порог", пока зелёными не останутся только растения.</li>
+      </ol>
+    </div>
+    <div class="goalbar" id="gCam"></div>
     <div class="cam">
-      <div class="card"><div class="camph" id="camPh">📷 Нажми "Включить камеру" и наведи на растение, газон или лист.</div><canvas id="camC" width="320" height="240" style="display:none"></canvas><video id="camV" playsinline muted></video>
-        <div class="row"><button class="ibtn pri" id="camOn">Включить камеру</button><button class="ibtn sm" id="camFlip" hidden>Сменить камеру</button><button class="ibtn sm" id="camMask" hidden>Карта зон: вкл</button></div></div>
+      <div class="card"><div class="camph" id="camPh">📷 Нажми "Включить камеру" и наведи её на растение, газон или лист.</div><canvas id="camC" width="320" height="240" style="display:none"></canvas><video id="camV" playsinline muted></video>
+        <div class="row"><button class="ibtn pri" id="camOn">Включить камеру</button><button class="ibtn sm" id="camFlip" hidden>Сменить камеру</button><button class="ibtn sm" id="camMask" hidden>Подсветка: вкл</button></div></div>
       <div class="card"><b>Что считает программа</b>
-        <div class="meter"><div><small>"Зелёные" пиксели</small><b id="camG" style="color:var(--ok)">-</b></div><div><small>Сухое, земля, другое</small><b id="camO" style="color:var(--warn)">-</b></div></div>
-        <label style="display:block;font-weight:800;font-size:13px;margin-top:12px">Порог индекса зелени: <span id="camTv"></span></label><input type="range" class="range" id="camT" min="-10" max="60" value="15">
-        <p style="font-size:13.5px;color:var(--dim);margin-top:10px">Для каждого пикселя считаем <code>2*G - R - B</code>, как в разборе на вкладке "Python". Зелёные пиксели подсвечиваются, остальные затемняются. Агродроны делают то же самое, только камерой с инфракрасным каналом.</p></div>
+        <div class="meter"><div><small>Зелёные пиксели</small><b id="camG" style="color:var(--ok)">-</b></div><div><small>Земля, сухое, другое</small><b id="camO" style="color:var(--warn)">-</b></div></div>
+        <label style="display:block;font-weight:800;font-size:13px;margin-top:12px">Порог: <span id="camTv"></span></label><input type="range" class="range" id="camThr" min="-10" max="60" value="15">
+        <p style="font-size:13.5px;color:var(--dim);margin-top:10px">Для каждого пикселя программа считает "индекс зелени" <code>2*G - R - B</code>: удваивает зелёный цвет и вычитает красный и синий. У живого растения число большое. Агродроны делают то же самое, только камерой с инфракрасным каналом.</p>
+        <p style="font-size:13.5px;color:var(--dim);margin-top:6px">Нет камеры или она не включается? Просто переходи к опыту 5.</p></div>
     </div>
 
-    <h2 class="sec" id="aiagT">5. Где ИИ уже работает в сельском хозяйстве</h2>
-    <div class="aiag" id="aiag"></div>
+    <h2 class="sec" id="dictT">5. Словарь ИИ: проверь себя <small>около 3 минут</small></h2>
+    <div class="howto">
+      <div class="hw-what"><span class="hw-tag">Что делаем</span><span>Запоминаем 10 главных слов про ИИ. Ты уже встретил их в опытах выше.</span></div>
+      <ol class="hw-steps">
+        <li>Нажми на слово - откроется объяснение и пример из лаборатории.</li>
+        <li>Нажми "Начать проверку": 5 вопросов, к каждому описанию выбери слово.</li>
+        <li>Ответь верно хотя бы на 4 вопроса из 5.</li>
+      </ol>
+    </div>
+    <div class="goalbar" id="gDict"></div>
+    <div class="dterms" id="dict"></div>
+    <div class="card qz" id="dictQ"></div>
 
-    <h2 class="sec" id="dictT">6. Словарь ИИ <small>нажми на карточку - она перевернётся</small></h2>
-    <div class="flips" id="dict"></div>
+    <h2 class="sec" id="aiagT">Почитать: где ИИ уже работает в сельском хозяйстве</h2>
+    <div class="aiag" id="aiag"></div>
 
     <h2 class="sec">Опрос <small>ответ анонимный - смотри, что думают другие</small></h2>
     <div class="card poll" id="pollBest" data-poll="agro_best" data-q="Что тебе интереснее всего в Агроклассе?"></div>
@@ -875,7 +1016,7 @@ const MODULES = [
    desc:'Командный проект: облёт "поля", фото проблемных зон, анализ на Python и отчёт агроному.',
    goals:['Планирую маршрут облёта','Анализирую снимки кодом','Защищаю проект и объясняю логику решения'],
    lessons:[],
-   practice:['1. Разметьте учебное "поле" и разложите маркеры проблемных зон.','2. Напишите программу облёта змейкой с фото над каждой зоной.','3. Проанализируйте снимки (как в Лаборатории Python, раздел 2).','4. Попросите нейросеть по правилам промпт-инжиниринга помочь составить отчёт агроному - и проверьте его сами.','5. Защитите проект перед классом.'],
+   practice:['1. Разметьте учебное "поле" и разложите маркеры проблемных зон.','2. Напишите программу облёта змейкой с фото над каждой зоной.','3. Проанализируйте снимки: найдите проблемные участки (как в задании 5 Лаборатории Python и в опыте с камерой в ИИ-лаборатории).','4. Попросите нейросеть по правилам промпт-инжиниринга помочь составить отчёт агроному - и проверьте его сами.','5. Защитите проект перед классом.'],
    materials:[], test:[]}
 ];
 
@@ -1075,381 +1216,304 @@ function renderXP(){
 }
 
 /* ============================================================
-   ЛАБОРАТОРИЯ PYTHON
+   ЛАБОРАТОРИЯ PYTHON: 5 заданий
+   Как добавить задание: допиши объект в массив PYT.
+     id     - уникальный код (XP сохраняется под ключом py_<id>)
+     code   - строки программы, {0} {1} ... - пропуски
+     gaps   - варианты для каждого пропуска (первый не обязательно верный)
+     stage()- рисует сцену (SVG), run(v,S) - "выполняет" программу с выбранными
+              вариантами v, анимирует сцену через S и возвращает
+              {ok:true, praise} или {gap, hint}
    ============================================================ */
-const SHOW=[
-  {t:'Полёт по программе', d:'Цикл из 2 строк заменяет 16 команд - дрон облетит поле змейкой.', i:'map', g:'#ca8a04,#f97316', go:'simT'},
-  {t:'Здоровье посевов по фото', d:'Считаем "индекс зелени" пикселей и находим проблемные участки.', i:'leaf', g:'#15803d,#84cc16', go:'fieldT'},
-  {t:'Автопосадка на маркер', d:'Камера видит ArUco-метку, код корректирует курс - и дрон садится сам.', i:'target', g:'#be123c,#f97316', mod:'m8'},
-  {t:'Отчёт агроному', d:'Python собирает данные облёта в таблицу, а нейросеть помогает оформить выводы.', i:'chart', g:'#1d4ed8,#0ea5e9', view:'ai'}
+const pyWait=ms=>new Promise(r=>setTimeout(r,ms));
+const pyDrone=(x,y)=>`<g class="drn" style="transform:translate(${x}px,${y}px)"><g class="drn-b">
+  <path d="M-15 -11L15 11M15 -11L-15 11" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+  ${[[-15,-11],[15,-11],[-15,11],[15,11]].map(([a,b])=>`<circle cx="${a}" cy="${b}" r="8" fill="rgba(226,232,240,.45)" stroke="#f8fafc" stroke-width="1.5"/>`).join('')}
+  <rect x="-8" y="-6" width="16" height="12" rx="4" fill="#0ea5e9"/><circle cx="0" cy="0" r="2.5" fill="#fff"/></g>
+  <g class="drn-tag" style="opacity:0"><rect x="-40" y="18" width="80" height="19" rx="9.5" fill="#0f172a" fill-opacity=".88"/><text x="0" y="31.5" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="700" font-family="JetBrains Mono,Consolas,monospace"></text></g></g>`;
+const T3M=[12,45,28,70];
+const soilC=m=>{ const t=Math.min(1,m/100); return `rgb(${Math.round(222-140*t)},${Math.round(176-110*t)},${Math.round(112-75*t)})`; };
+const T5V=[82,75,31,90,24,68];
+const leafC=g=>`hsl(${Math.round(38+g*0.85)},62%,${Math.round(30+g*0.1)}%)`;
+const txt=(x,y,t,o='')=>`<text x="${x}" y="${y}" font-family="Manrope,sans-serif" font-weight="800" ${o}>${t}</text>`;
+
+const PYT=[
+ {id:'t1', e:'👋', title:'Дрон, представься', short:'print и переменные', xp:20,
+  goal:'Дай дрону имя и научи его здороваться: на экране должно появиться "Привет! Я дрон" и его имя.',
+  learn:'<b>print()</b> выводит на экран то, что написано в скобках. <b>Переменная</b> - это коробка с названием: знак <code>=</code> кладёт в неё значение, а потом его можно достать по названию. Текст всегда пишут в кавычках.',
+  ex:'культура = "пшеница"\nprint("Сеем", культура)', exOut:'Сеем пшеница',
+  code:['# Задание 1: дрон знакомится','имя = {0}','print("Привет! Я дрон", {1})','print("Готов осматривать поле!")'],
+  gaps:[['"Пчёлка"','Пчёлка','"Сокол"'],['имя','"имя"','print']],
+  tip:'Текст в Python пишут в кавычках: "Пчёлка". А чтобы достать значение из переменной, пишут её название без кавычек.',
+  cheat:{t:'print и переменные', c:'имя = "Пчёлка"\nprint("Я дрон", имя)', d:'= кладёт значение в переменную, print показывает его на экране. Текст - в кавычках.'},
+  stage:()=>`<svg viewBox="0 0 360 230"><defs><linearGradient id="t1s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient></defs>
+    <rect width="360" height="230" fill="url(#t1s)"/><circle cx="322" cy="36" r="20" fill="#fde047"/>
+    <path d="M0 160 Q90 140 180 158 T360 150 V230 H0Z" fill="#4ade80"/><path d="M0 180 Q100 164 200 182 T360 174 V230 H0Z" fill="#16a34a"/>
+    <g stroke="#14532d" stroke-width="2" opacity=".35">${[...Array(10)].map((_,i)=>`<path d="M${i*40-10} 230 L${30+i*34} 182"/>`).join('')}</g>
+    ${txt(18,170,'📦 переменная имя','font-size="12" fill="#14532d"')}
+    <g id="t1box" transform="translate(16 178)"><rect width="140" height="40" rx="10" fill="#fff" stroke="#f59e0b" stroke-width="2.5"/><text x="70" y="26" text-anchor="middle" font-family="JetBrains Mono,Consolas,monospace" font-size="15" font-weight="700" fill="#94a3b8" id="t1val">пусто</text></g>
+    ${pyDrone(230,112)}</svg><div class="pybub" id="pyBub"></div>`,
+  async run(v,S){
+    if(v[0]===1){ S.print('Traceback: ошибка в строке 2','err'); S.print("NameError: name 'Пчёлка' is not defined",'err'); S.shake();
+      return {gap:0, hint:'Python не знает слова Пчёлка: без кавычек он думает, что это название другой переменной, которой нет. Текст нужно взять в кавычки: "Пчёлка".'}; }
+    const nm=v[0]===0?'Пчёлка':'Сокол', val=S.q('#t1val');
+    val.textContent='"'+nm+'"'; val.setAttribute('fill','#0f172a'); S.pop('#t1box'); await S.wait(800);
+    const l1='Привет! Я дрон '+[nm,'имя','<built-in function print>'][v[1]];
+    S.print(l1); S.bubble(l1); await S.wait(1300);
+    S.print('Готов осматривать поле!'); S.bubble('Готов осматривать поле!'); await S.wait(900);
+    if(v[1]===1) return {gap:1, hint:'Дрон сказал слово "имя", а не своё имя. Всё, что в кавычках, - просто текст. Чтобы достать то, что лежит в коробке, напиши название переменной без кавычек.'};
+    if(v[1]===2) return {gap:1, hint:'print - это команда, а не коробка с именем. Нужна переменная, в которую ты положил имя дрона в строке 2.'};
+    return {ok:true, praise:`Дрон ${nm} представился! Ты создал переменную и вывел её значение через print(). Именно так программы "разговаривают" с нами.`};
+  }},
+
+ {id:'t2', e:'🧮', title:'Считаем поле', short:'арифметика', xp:20,
+  goal:'Посчитай площадь поля 20 на 15 метров и сколько рассады капусты нужно, если на 1 м² сажают 4 растения.',
+  learn:'Python считает как калькулятор: <code>+</code> сложить, <code>-</code> вычесть, <code>*</code> умножить, <code>/</code> разделить. Результат можно положить в переменную и использовать дальше. Площадь прямоугольника = длина * ширина.',
+  ex:'грядок = 3\nкустов = грядок * 8\nprint("Кустов:", кустов)', exOut:'Кустов: 24',
+  code:['длина = 20','ширина = 15','на_метр = 4','площадь = длина {0} ширина','рассада = площадь * {1}','print("Площадь:", площадь)','print("Нужно рассады:", рассада)'],
+  gaps:[['*','+','-'],['на_метр','длина','"4"']],
+  tip:'Площадь = длина умножить на ширину. Умножение в Python - это звёздочка *. Для рассады умножь площадь на число растений на 1 м² - оно лежит в переменной на_метр.',
+  cheat:{t:'Арифметика', c:'площадь = 20 * 15\nprint(площадь)   # 300', d:'+ - * / как в математике. Числа пишем без кавычек, иначе это текст.'},
+  stage:()=>{ let c=''; for(let r=0;r<15;r++) for(let k=0;k<20;k++) c+=`<rect class="c2" x="${70+k*11}" y="${32+r*11}" width="11" height="11"/>`;
+    return `<svg viewBox="0 0 360 230"><defs><pattern id="t2p" width="11" height="11" patternUnits="userSpaceOnUse" x="70" y="32"><rect width="11" height="11" fill="#bbf7d0"/><circle cx="3" cy="3" r="1.7" fill="#15803d"/><circle cx="8" cy="3" r="1.7" fill="#15803d"/><circle cx="3" cy="8" r="1.7" fill="#15803d"/><circle cx="8" cy="8" r="1.7" fill="#15803d"/></pattern>
+      <pattern id="t2g" width="11" height="11" patternUnits="userSpaceOnUse" x="70" y="32"><path d="M11 0H0V11" fill="none" stroke="rgba(120,72,30,.3)"/></pattern></defs>
+      <rect width="360" height="230" fill="#14532d"/><rect x="70" y="32" width="220" height="165" fill="#d9b98a"/>${c}<rect x="70" y="32" width="220" height="165" fill="url(#t2g)" stroke="#78350f" stroke-width="2" pointer-events="none"/>
+      ${txt(180,22,'длина = 20 м','text-anchor="middle" fill="#fff" font-size="13"')}
+      <text transform="translate(56 115) rotate(-90)" text-anchor="middle" fill="#fff" font-size="13" font-weight="800" font-family="Manrope,sans-serif">ширина = 15 м</text>
+      ${pyDrone(325,40)}</svg><div class="pychips" id="pyChips"></div>`; },
+  async run(v,S){
+    const area=[300,35,5][v[0]], cells=S.qa('.c2');
+    S.print('длина = 20, ширина = 15, на_метр = 4','sys'); S.tag('считаю площадь');
+    await S.mv(75,37,500);
+    for(let r=0;r<15&&r*20<area;r++){ const rev=r%2;
+      for(let k=0;k<20;k++){ const i=r*20+k; if(i<area){ cells[i].style.transitionDelay=((rev?19-k:k)*11)+'ms'; cells[i].classList.add('on'); } }
+      await S.mv(rev?75:285, 37+r*11, 230); }
+    S.tag(''); S.print('Площадь: '+area); S.chip(`площадь = ${area} м²`, v[0]===0?'ok':'bad'); await S.wait(500);
+    if(v[1]===2){ S.print('Нужно рассады: '+'4'.repeat(Math.min(area,48))+'...'); S.chip('"4" * '+area+' = 4444...','bad'); }
+    else { const s=area*(v[1]===0?4:20), good=v[0]===0&&v[1]===0;
+      if(good) cells.forEach(c=>{ c.style.transitionDelay=(Math.random()*500|0)+'ms'; c.classList.add('seed'); });
+      S.print('Нужно рассады: '+s); S.chip(`рассада = ${s}`, good?'ok':'bad'); }
+    await S.mv(325,40,600);
+    if(v[0]===1) return {gap:0, hint:'20 + 15 = 35 - это не площадь, а просто сумма двух сторон. Посмотри: закрашено всего 35 клеток из 300. Площадь прямоугольника считают умножением: длина * ширина.'};
+    if(v[0]===2) return {gap:0, hint:'20 - 15 = 5 - это разница сторон, а не площадь. Площадь прямоугольника = длина * ширина.'};
+    if(v[1]===1) return {gap:1, hint:'Ты умножил площадь на длину поля (20) и получил 6000 растений - слишком много! На 1 м² сажают 4 растения, это число лежит в переменной на_метр.'};
+    if(v[1]===2) return {gap:1, hint:'"4" в кавычках - это текст, а не число. Python не стал считать, а повторил символ 4 целых 300 раз! Для расчётов нужна переменная с числом: на_метр.'};
+    return {ok:true, praise:'Поле 20 на 15 м - это 300 м², а рассады нужно 300 * 4 = 1200 растений. Поменяй длину в программе - и Python всё пересчитает сам.'};
+  }},
+
+ {id:'t3', e:'💧', title:'Полить или нет?', short:'условие if', xp:20,
+  goal:'Дрон облетает 4 участка и меряет влажность почвы. Пусть он поливает только сухие - где влажность меньше 30%.',
+  learn:'<b>if</b> проверяет условие. Если оно верно, выполняются строки с отступом под if. Если нет - строки под <b>else</b>. Знаки: <code>&lt;</code> меньше, <code>&gt;</code> больше, <code>==</code> равно. После if и else ставится двоеточие.',
+  ex:'заряд = 15\nif заряд < 20:\n    print("Лечу домой")\nelse:\n    print("Работаю дальше")', exOut:'Лечу домой',
+  code:['# дрон измерил влажность участка','if влажность {0} 30:','    print("Сухо, поливаю")','{1}','    print("Влажно, пропускаю")'],
+  gaps:[['<','>','=='],['else:','else','if:']],
+  tip:'Сухая почва - это маленькая влажность, то есть влажность МЕНЬШЕ 30. И не забудь двоеточие после else.',
+  cheat:{t:'Условие if', c:'if влажность < 30:\n    print("Полить")\nelse:\n    print("Не надо")', d:'Двоеточие и отступ обязательны. < меньше, > больше, == равно.'},
+  stage:()=>`<svg viewBox="0 0 360 230"><rect width="360" height="230" fill="#bae6fd"/><rect y="88" width="360" height="142" fill="#65a30d"/>
+    ${T3M.map((m,i)=>`<g class="p3" id="p3_${i}" transform="translate(${10+i*87} 106)">
+      <rect class="soil" width="78" height="112" rx="10" fill="${soilC(m)}"/>
+      <g class="rain" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round">${[12,26,40,54,66,20,48].map((x,k)=>`<line x1="${x}" y1="${-34+(k%3)*9}" x2="${x}" y2="${-26+(k%3)*9}" style="animation-delay:${k*70}ms"/>`).join('')}</g>
+      <g class="sprout" fill="#22c55e">${[16,39,62].map(x=>`<path d="M${x} 98 q-7 -12 0 -20 q7 8 0 20z"/>`).join('')}</g>
+      ${txt(39,30,'💧 '+m+'%','text-anchor="middle" font-size="14" fill="#fff"')}
+      <text class="mk" x="39" y="70" text-anchor="middle" font-size="28" font-weight="800" font-family="Manrope,sans-serif"></text></g>`).join('')}
+    ${pyDrone(30,40)}</svg><div class="pychips top" id="pyChips"></div>`,
+  async run(v,S){
+    if(v[1]===1){ S.print('  строка 4: else','err'); S.print("SyntaxError: expected ':'",'err'); S.shake();
+      return {gap:1, hint:'После else обязательно ставится двоеточие - так Python понимает, что дальше идёт блок с отступом. Выбери else:'}; }
+    if(v[1]===2){ S.print('  строка 4: if:','err'); S.print('SyntaxError: invalid syntax','err'); S.shake();
+      return {gap:1, hint:'После if всегда должно идти условие, а здесь его нет. Для "во всех остальных случаях" в Python есть слово else:'}; }
+    const f=[m=>m<30,m=>m>30,m=>m===30][v[0]];
+    for(let i=0;i<4;i++){ const m=T3M[i], g=S.q('#p3_'+i), w=f(m), need=m<30;
+      S.tag('влажность = '+m); await S.mv(49+i*87, 58, 650);
+      S.print(`[участок ${i+1}: влажность = ${m}]`,'sys');
+      if(w){ S.print('Сухо, поливаю'); g.classList.add('rn','wat'); g.querySelector('.soil').style.fill=soilC(m+48); await S.wait(1000); g.classList.remove('rn'); }
+      else { S.print('Влажно, пропускаю'); await S.wait(380); }
+      const mk=g.querySelector('.mk'); mk.textContent=w===need?'✓':'✗'; mk.setAttribute('fill',w===need?'#bbf7d0':'#fecaca'); mk.classList.add('on'); }
+    S.tag(''); await S.mv(30,40,600);
+    if(v[0]===1){ S.chip('политы мокрые участки','bad'); return {gap:0, hint:'Дрон полил мокрые участки (45% и 70%), а сухие оставил без воды! Сухо - это когда влажность МЕНЬШЕ 30. Нужен знак <.'}; }
+    if(v[0]===2){ S.chip('ничего не полито','bad'); return {gap:0, hint:'== проверяет "ровно равно". Ни на одном участке влажность не была ровно 30, поэтому дрон ничего не полил. Нужен знак "меньше": <.'}; }
+    S.chip('политы 2 сухих участка','ok');
+    return {ok:true, praise:'Дрон полил только сухие участки (12% и 28%), а влажные пропустил. Так работают умные системы полива: экономят воду и не заливают растения.'};
+  }},
+
+ {id:'t4', e:'🔁', title:'Облёт рядков циклом', short:'цикл for', xp:20,
+  goal:'Облети все 5 рядков поля и сфотографируй каждый, используя цикл, а не 10 одинаковых строк.',
+  learn:'<b>for</b> повторяет команды несколько раз. <code>range(3)</code> значит "3 раза", а счётчик принимает значения 0, 1, 2. Повторяются только строки, сдвинутые на 4 пробела (отступ). Строка без отступа выполнится один раз - после цикла.',
+  ex:'for i in range(3):\n    print("Пик!")\nprint("Готово")', exOut:'Пик!\nПик!\nПик!\nГотово',
+  code:['takeoff()        # взлёт','for ряд in range({0}):','    fly_row()    # пролететь рядок','{1}','land()           # посадка'],
+  gaps:[['5','3','50'],['    photo()','photo()']],
+  tip:'Посчитай рядки на картинке. А снимок должен повторяться в каждом круге цикла - значит, строке photo() нужен отступ (····).',
+  cheat:{t:'Цикл for', c:'for ряд in range(5):\n    fly_row()\n    photo()', d:'Повторяет строки с отступом. Счёт идёт с нуля: 0, 1, 2, 3, 4.'},
+  stage:()=>`<svg viewBox="0 0 360 230"><rect width="360" height="230" fill="#166534"/>
+    ${[0,1,2,3,4].map(i=>{ const y=16+i*36; return `<g id="r4_${i}"><rect x="40" y="${y}" width="290" height="24" rx="6" fill="#854d0e"/>${[...Array(15)].map((_,k)=>`<circle cx="${52+k*19}" cy="${y+12}" r="6" fill="#4ade80"/>`).join('')}
+      <rect class="phf" x="36" y="${y-4}" width="298" height="32" rx="8" fill="#fef9c3"/><text class="mk" x="346" y="${y+17}" text-anchor="middle" font-size="15">📸</text>${txt(20,y+17,i+1,'text-anchor="middle" font-size="12" fill="#bbf7d0"')}</g>`; }).join('')}
+    <circle cx="22" cy="210" r="13" fill="#facc15"/>${txt(22,215,'H','text-anchor="middle" font-size="13" fill="#14532d"')}
+    ${pyDrone(22,210)}</svg><div class="pychips" id="pyChips"></div>`,
+  async run(v,S){
+    const n=[5,3,50][v[0]], ind=v[1]===0; let crash=false, ph=0, last=0;
+    const snap=async k=>{ const g=S.q('#r4_'+k), f=g.querySelector('.phf'); f.classList.remove('on'); void f.getBoundingClientRect(); f.classList.add('on'); g.querySelector('.mk').classList.add('on'); ph++; S.print(`📸 снимок рядка ${k+1}`); await S.wait(300); };
+    S.print('takeoff(): взлёт','sys'); await S.mv(22,190,400);
+    for(let k=0;k<n;k++){ S.tag('ряд = '+k);
+      if(k>=5){ await S.mv(185,28+k*36,600); S.print(`ряд = ${k}: тут уже нет поля!`,'err'); if(k>=6){ S.print(`Батарея села на повторе ${k+1} из ${n}. Аварийная посадка!`,'err'); crash=true; break; } continue; }
+      const y=28+k*36; await S.mv(40,y,380); await S.mv(330,y,720); last=k; S.print(`ряд = ${k}: пролетел рядок ${k+1}`,'sys');
+      if(ind) await snap(k); }
+    S.tag('');
+    if(crash){ S.shake(); await S.wait(600); }
+    else { if(!ind) await snap(last); await S.mv(22,210,800); S.print('land(): посадка','sys'); }
+    S.chip(`рядков: ${Math.min(n,5)} из 5`, n===5?'ok':'bad'); S.chip(`снимков: ${ph} из 5`, ph===5?'ok':'bad');
+    if(n===50) return {gap:0, hint:'range(50) - это 50 повторов, а рядков всего 5. Дрон улетел за поле и разрядил батарею. Посчитай рядки на картинке.'};
+    if(n===3) return {gap:0, hint:'Дрон облетел только 3 рядка из 5. Число в range() - это сколько раз повторить цикл. Посчитай рядки на картинке.'};
+    if(!ind) return {gap:1, hint:'photo() без отступа стоит ПОСЛЕ цикла, поэтому сработала один раз. Выбери вариант с отступом (····photo()) - тогда снимок станет частью цикла и повторится для каждого рядка.'};
+    return {ok:true, praise:'Две строки цикла заменили 10 одинаковых команд! Заметь: счётчик ряд принимал значения 0, 1, 2, 3, 4 - в Python счёт начинается с нуля.'};
+  }},
+
+ {id:'t5', e:'🔍', title:'Найди больные растения', short:'списки', xp:30,
+  goal:'Дрон измерил зелень 6 растений. Найди больные (зелень меньше 50) и посчитай, сколько их.',
+  learn:'<b>Список</b> хранит много значений в одной переменной: <code>[82, 31, 90]</code>. Цикл <code>for x in список:</code> по очереди берёт каждый элемент. Счётчик увеличивают так: <code>n = n + 1</code>.',
+  ex:'поля = ["рожь", "овёс"]\nfor п in поля:\n    print("Сеем", п)', exOut:'Сеем рожь\nСеем овёс',
+  code:['замеры = [82, 75, 31, 90, 24, 68]','больных = 0','for растение in {0}:','    if растение < {1}:','        print("Больное:", растение)','        больных = {2}','print("Всего больных:", больных)'],
+  gaps:[['замеры','range(6)','больных'],['50','100','0'],['больных + 1','1','растение']],
+  tip:'Перебирать нужно список замеры. Больные - это зелень меньше 50. А счётчик при каждой находке увеличивается на 1.',
+  cheat:{t:'Список', c:'замеры = [82, 31, 90]\nfor р in замеры:\n    print(р)', d:'Много значений в одной переменной. for берёт их по очереди.'},
+  stage:()=>`<svg viewBox="0 0 360 230"><rect width="360" height="230" fill="#e0f2fe"/><rect y="168" width="360" height="62" fill="#a16207"/><rect y="168" width="360" height="5" fill="#854d0e"/>
+    ${T5V.map((g,i)=>{ const x=35+i*58, c=leafC(g); return `<g id="pl_${i}"><circle class="ring" cx="${x}" cy="136" r="31" fill="rgba(220,38,38,.12)" stroke="#dc2626" stroke-width="3" stroke-dasharray="6 4"/>
+      <path d="M${x} 168 V116" stroke="${c}" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="${x-12}" cy="142" rx="13" ry="6" transform="rotate(-25 ${x-12} 142)" fill="${c}"/><ellipse cx="${x+12}" cy="132" rx="13" ry="6" transform="rotate(25 ${x+12} 132)" fill="${c}"/><ellipse cx="${x}" cy="113" rx="7" ry="11" fill="${c}"/>
+      ${g<50?`<circle cx="${x-14}" cy="141" r="2.3" fill="#78350f"/><circle cx="${x+10}" cy="131" r="2" fill="#78350f"/><circle cx="${x+1}" cy="110" r="1.8" fill="#78350f"/>`:''}
+      <text x="${x}" y="196" text-anchor="middle" font-family="JetBrains Mono,Consolas,monospace" font-weight="700" font-size="15" fill="#fff">${g}</text>
+      <text class="okm" x="${x}" y="98" text-anchor="middle" font-size="16" font-weight="800" fill="#16a34a">✓</text></g>`; }).join('')}
+    ${txt(10,221,'замеры зелени: 0-100','font-size="11" fill="#fde68a"')}
+    ${pyDrone(28,40)}</svg><div class="pychips top" id="pyChips"></div>`,
+  async run(v,S){
+    if(v[0]===2){ S.print('Traceback: ошибка в строке 3','err'); S.print("TypeError: 'int' object is not iterable",'err'); S.shake();
+      return {gap:0, hint:'больных - это одно число (счётчик), его нельзя перебирать по одному. Перебирать нужно список с замерами: замеры.'}; }
+    const vals=v[0]===0?T5V:[0,1,2,3,4,5], th=[50,100,0][v[1]]; let cnt=0; const ch=S.chip('больных = 0');
+    for(let i=0;i<6;i++){ const val=vals[i], g=S.q('#pl_'+i);
+      S.tag('растение = '+val); await S.mv(35+i*58,62,480);
+      if(val<th){ g.classList.add('sick'); S.print('Больное: '+val); cnt=v[2]===0?cnt+1:v[2]===1?1:val; ch.textContent='больных = '+cnt; ch.className='hl'; await S.wait(550); ch.className=''; }
+      else { g.classList.add('okp'); await S.wait(260); } }
+    S.tag(''); await S.mv(28,40,500); S.print('Всего больных: '+cnt);
+    const good=v.every(x=>x===0); ch.className=good?'ok':'bad';
+    if(v[0]===1) return {gap:0, hint:'range(6) - это числа 0, 1, 2, 3, 4, 5: номера, а не замеры зелени. Поэтому все "растения" оказались больными. Перебирать нужно сам список: замеры.'};
+    if(v[1]===1) return {gap:1, hint:'С порогом 100 в больные попали даже здоровые растения с зеленью 90. Больные - это зелень меньше 50.'};
+    if(v[1]===2) return {gap:1, hint:'Зелень не бывает меньше 0, поэтому дрон не нашёл ни одного больного растения. Нужен порог 50.'};
+    if(v[2]===1) return {gap:2, hint:'Получилось 1, а больных растений 2. Строка больных = 1 каждый раз просто кладёт в коробку единицу. Чтобы считать, нужно прибавлять: больных + 1.'};
+    if(v[2]===2) return {gap:2, hint:'В счётчик попало значение зелени (24), а не количество растений. Счётчик увеличивают на 1: больных + 1.'};
+    return {ok:true, praise:'Дрон нашёл 2 больных растения (31 и 24) и сам их посчитал. Список + цикл + условие: так устроены настоящие программы анализа полей.'};
+  }}
 ];
-const PRESETS={
-  'Квадрат 4 м':{d:'Самая простая фигура: 4 раза "вперёд и поворот направо". Дрон вернётся туда, откуда взлетел.', c:`# Облёт квадратного участка
-takeoff()
-for i in range(4):
-    forward(4)
-    turn(90)
-land()`},
-  'Змейка по полю':{d:'Так настоящие агродроны снимают поле: полоса вверх, сдвиг, полоса вниз. На каждой полосе - фото.', c:`# Облёт поля "змейкой" с фото
-takeoff()
-for i in range(3):
-    forward(6)
-    photo()
-    turn(90)
-    forward(1.5)
-    turn(90)
-    forward(6)
-    photo()
-    turn(-90)
-    forward(1.5)
-    turn(-90)
-land()`},
-  'Треугольник':{d:'Сумма внешних углов любой фигуры - 360°. У треугольника 3 угла, значит, поворот 360 / 3 = 120°.', c:`# Треугольник: поворот на 120 градусов
-takeoff()
-for i in range(3):
-    forward(5)
-    turn(120)
-land()`},
-  'Звезда':{d:'Поворот на 144° рисует пятиконечную звезду. Попробуй поменять 144 на 135 и посмотри, что будет.', c:`# Пятиконечная звезда
-takeoff()
-for i in range(5):
-    forward(5)
-    turn(144)
-land()`},
-  'Спираль (переменная i)':{d:'Счётчик цикла i растёт: 0, 1, 2... Поэтому forward(i + 1) каждый раз летит на метр дальше.', c:`# Спираль: с каждым витком дальше
-takeoff()
-for i in range(6):
-    forward(i + 1)
-    turn(90)
-land()`},
-  'Сетка фото 3 x 3':{d:'Цикл внутри цикла: внешний перебирает ряды, внутренний - снимки в ряду. Итого 3 x 3 = 9 кадров.', c:`# Съёмка поля сеткой: цикл в цикле
-шаг = 3
-takeoff()
-for ряд in range(3):
-    for кадр in range(3):
-        photo()
-        forward(шаг)
-    back(шаг * 3)
-    right(шаг)
-left(шаг * 3)
-land()
-print("Снято 9 кадров, дрон дома!")`},
-  'Облёт границы поля':{d:'Прямоугольник 8 на 5 м с фото в каждом углу. Переменные длина и ширина можно менять.', c:`# Облёт границы поля с фото углов
-длина = 8
-ширина = 5
-takeoff()
-for i in range(2):
-    forward(длина)
-    photo()
-    turn(90)
-    forward(ширина)
-    photo()
-    turn(90)
-land()`},
-  'Ошибка 1: найди её':{d:'В программе ошибка. Запусти - Python подскажет строку. Исправь и запусти снова.', c:`takeoff()
-for i in range(4)
-    forward(3)
-    turn(90)
-land()`},
-  'Ошибка 2: найди её':{d:'Дрон отказывается лететь. Почему?', c:`# облёт квадрата
-for i in range(4):
-    forward(3)
-    turn(90)
-land()`},
-  'Ошибка 3: найди её':{d:'Дрон улетает за границу поля. Какое число надо уменьшить?', c:`takeoff()
-forward(20)
-land()`}
-};
 
-/* --- вычисление выражений: числа, переменные, + - * / % и скобки --- */
-const ID_RE='[A-Za-zА-Яа-яЁё_][A-Za-zА-Яа-яЁё0-9_]*';
-function evalExpr(src, env, ln){
-  const toks=[]; const re=new RegExp(`\\s*(\\d+(?:\\.\\d+)?|${ID_RE}|[-+*/%()])`,'y'); let m, pos=0; src=String(src).trim();
-  while(pos<src.length){ re.lastIndex=pos; m=re.exec(src); if(!m) throw {ln, msg:`Не понимаю выражение "${src}"`}; toks.push(m[1]); pos=re.lastIndex; while(src[pos]===' ') pos++; }
-  let i=0;
-  const peek=()=>toks[i], next=()=>toks[i++];
-  function prim(){ const t=next(); if(t===undefined) throw {ln, msg:`Выражение "${src}" оборвалось`};
-    if(t==='('){ const v=add(); if(next()!==')') throw {ln, msg:'Не хватает закрывающей скобки ")"'}; return v; }
-    if(t==='-') return -prim();
-    if(/^\d/.test(t)) return +t;
-    if(new RegExp('^'+ID_RE+'$').test(t)){ if(!(t in env)) throw {ln, msg:`Переменная "${t}" не создана. Сначала напиши, например: ${t} = 3`}; return env[t]; }
-    throw {ln, msg:`Лишний знак "${t}"`}; }
-  function mul(){ let v=prim(); while(['*','/','%'].includes(peek())){ const o=next(), r=prim(); if(o==='*') v*=r; else if(o==='/'){ if(r===0) throw {ln, msg:'Делить на ноль нельзя'}; v/=r; } else v%=r; } return v; }
-  function add(){ let v=mul(); while(['+','-'].includes(peek())){ const o=next(), r=mul(); v=o==='+'?v+r:v-r; } return v; }
-  const v=add(); if(i<toks.length) throw {ln, msg:`Лишнее в выражении: "${toks.slice(i).join(' ')}"`}; return v;
-}
-const CMDS=['takeoff','land','photo','forward','back','left','right','turn','up','down'];
-function parse(src){
-  const lines=src.replace(/\t/g,'    ').split('\n'); let pos=0;
-  function block(indent){
-    const out=[];
-    while(pos<lines.length){
-      const raw=lines[pos], ln=pos+1, s=stripComment(raw).trimEnd();
-      if(!s.trim()){ pos++; continue; }
-      const ind=s.length-s.trimStart().length;
-      if(ind<indent) break;
-      if(ind>indent) throw {ln, msg:'Лишний отступ - строка сдвинута, хотя выше нет "for ...:"'};
-      const t=s.trim(); pos++;
-      let m;
-      if(m=t.match(new RegExp(`^for\\s+(${ID_RE})\\s+in\\s+range\\((.+)\\)\\s*(:?)$`))){
-        if(!m[3]) throw {ln, msg:'После "for ... in range(...)" нужно поставить двоеточие ":"'};
-        const nx=lines.slice(pos).find(x=>stripComment(x).trim()); const nxs=nx?nx.replace(/\t/g,'    '):''; const ni=nx?nxs.length-nxs.trimStart().length:0;
-        if(!nx || ni<=indent) throw {ln, msg:'Тело цикла нужно сдвинуть вправо на 4 пробела'};
-        out.push({op:'for', v:m[1], n:m[2], body:block(ni), ln});
-      } else if(m=t.match(/^print\((.*)\)$/)){
-        out.push({op:'print', a:m[1], ln});
-      } else if(m=t.match(new RegExp(`^(${CMDS.join('|')})\\((.*)\\)$`))){
-        out.push({op:m[1], a:m[2].trim()||null, ln});
-      } else if(m=t.match(new RegExp(`^(${ID_RE})\\s*=\\s*(.+)$`))){
-        if(CMDS.includes(m[1])||['for','in','range','print'].includes(m[1])) throw {ln, msg:`"${m[1]}" - служебное слово, так назвать переменную нельзя`};
-        out.push({op:'set', name:m[1], e:m[2], ln});
-      } else if(/^for\b/.test(t)) throw {ln, msg:'Проверь цикл: пример - for i in range(4):'};
-      else if(new RegExp(`^(${CMDS.join('|')})\\b`).test(t) && !/\)$/.test(t)) throw {ln, msg:'Не хватает скобок: команда пишется так - forward(3)'};
-      else throw {ln, msg:`Неизвестная команда: ${t}`};
-    }
-    return out;
-  }
-  return block(0);
-}
-function stripComment(s){ let q=null; for(let i=0;i<s.length;i++){ const c=s[i]; if(q){ if(c===q) q=null; } else if(c==='"'||c==="'") q=c; else if(c==='#') return s.slice(0,i); } return s; }
-function splitArgs(a){ const out=[]; let cur='', q=null, d=0; for(const c of a){ if(q){ cur+=c; if(c===q) q=null; continue; } if(c==='"'||c==="'"){ q=c; cur+=c; continue; } if(c==='(') d++; if(c===')') d--; if(c===','&&!d){ out.push(cur); cur=''; continue; } cur+=c; } if(cur.trim()) out.push(cur); return out.map(x=>x.trim()); }
-/* превращаем программу в список шагов (переменные вычисляются по ходу) */
-function flatten(prog){
-  const env={}, out=[], info={loop:false, nested:false, useVar:false};
-  const loopVars=new Set();
-  function run(list, depth){
-    for(const c of list){
-      if(out.length>3000) throw {ln:c.ln, msg:'Слишком много шагов - проверь числа в range()'};
-      if(c.op==='for'){ info.loop=true; if(depth>0) info.nested=true; const n=Math.round(evalExpr(c.n,env,c.ln)); if(n<0||n>200) throw {ln:c.ln, msg:'Число повторов должно быть от 0 до 200'};
-        loopVars.add(c.v); for(let k=0;k<n;k++){ env[c.v]=k; run(c.body, depth+1); } }
-      else if(c.op==='set'){ env[c.name]=evalExpr(c.e,env,c.ln); out.push({op:'set', ln:c.ln, name:c.name, v:env[c.name]}); }
-      else if(c.op==='print'){ const txt=splitArgs(c.a).map(p=>/^(["']).*\1$/.test(p)?p.slice(1,-1):String(+evalExpr(p,env,c.ln).toFixed(2))).join(' '); out.push({op:'print', ln:c.ln, txt}); }
-      else { if(c.a && [...loopVars].some(v=>new RegExp(`(^|[^A-Za-zА-Яа-яЁё0-9_])${v}([^A-Za-zА-Яа-яЁё0-9_]|$)`).test(c.a))) info.useVar=true;
-        const v=c.a===null?null:evalExpr(c.a,env,c.ln); if(['takeoff','land','photo'].includes(c.op)&&c.a) throw {ln:c.ln, msg:`${c.op}() пишется с пустыми скобками`};
-        out.push({op:c.op, v, ln:c.ln, a:c.a}); }
-    }
-  }
-  run(prog,0); return {steps:out, info};
-}
-/* пояснение к строке кода - простым языком */
-const fmtN=v=>String(Math.round(v*100)/100);
-function explainLine(raw){
-  const t=stripComment(raw).trim(), cm=raw.trim().startsWith('#');
-  if(!raw.trim()) return null;
-  if(cm) return {k:'cm', e:'Комментарий - заметка для человека. Дрон эту строку пропускает.'};
-  let m;
-  const num=a=>/^-?\d+(\.\d+)?$/.test(a||'');
-  if(m=t.match(new RegExp(`^for\\s+(${ID_RE})\\s+in\\s+range\\((.+)\\)\\s*(:?)$`))) return m[3]?{e:`🔁 Цикл: повторить ${num(m[2])?m[2]+' '+plural(+m[2],'раз','раза','раз'):'"'+m[2]+'" раз'} всё, что ниже с отступом. <b>${esc(m[1])}</b> - счётчик повторов: 0, 1, 2...`}:{k:'bad', e:'❗ Не хватает двоеточия ":" в конце строки с for.'};
-  if(/^for\b/.test(t)) return {k:'bad', e:'❗ Цикл записан неправильно. Пример: for i in range(4):'};
-  if(m=t.match(/^print\((.*)\)$/)) return {e:'🖨 Вывести сообщение в окно результата - так программа "говорит" с нами.'};
-  if(m=t.match(/^(\w+)\((.*)\)$/)){ const a=m[2].trim(), d=num(a)?fmtN(+a):a?`(${a})`:'';
-    switch(m[1]){
-      case 'takeoff': return {e:'🛫 Взлёт: моторы раскручиваются, дрон поднимается в воздух.'};
-      case 'land': return {e:'🛬 Посадка: дрон плавно снижается и выключает моторы.'};
-      case 'photo': return {e:'📸 Снимок камерой. На карте появится жёлтая рамка - это кадр.'};
-      case 'forward': return {e:`⬆ Лететь вперёд${d?' на '+d+' м':''} - туда, куда смотрит нос дрона.${!num(a)&&a?' Число вычисляется на каждом шаге.':''}`};
-      case 'back': return {e:`⬇ Лететь назад${d?' на '+d+' м':''}, не разворачиваясь.`};
-      case 'left': return {e:`⬅ Сместиться влево${d?' на '+d+' м':''} (боком, нос смотрит туда же).`};
-      case 'right': return {e:`➡ Сместиться вправо${d?' на '+d+' м':''} (боком, нос смотрит туда же).`};
-      case 'turn': { const v=num(a)?+a:null; return {e:`↻ Повернуться${d?' на '+d+'°':' на 90°'}${v!==null?(v<0?' против часовой (влево)':' по часовой (вправо)'):''}. Дрон висит на месте - меняется только направление.`}; }
-      case 'up': case 'down': return {e:m[1]==='up'?'⤴ Подняться выше.':'⤵ Опуститься ниже.'};
-    }
-  }
-  if(m=t.match(new RegExp(`^(${ID_RE})\\s*=\\s*(.+)$`))) return {e:`📦 Переменная <b>${esc(m[1])}</b>: запоминаем ${num(m[2])?'число '+m[2]:'значение '+esc(m[2])}. Дальше можно писать ${esc(m[1])} вместо числа.`};
-  if(/^(takeoff|land|photo|forward|back|left|right|turn)\b/.test(t)) return {k:'bad', e:'❗ Команде не хватает скобок. Правильно: forward(3)'};
-  return {k:'bad', e:'❓ Не понимаю эту строку - проверь написание (смотри "Какие команды понимает дрон").'};
-}
-let explOn=true, curLine=0;
-function renderExpl(){
-  const box=$('#expl'); if(!box) return; box.classList.toggle('off',!explOn); if(!explOn) return;
-  const lines=$('#src').value.split('\n');
-  box.innerHTML=lines.map((l,i)=>{ const x=explainLine(l); if(!x) return ''; return `<div class="el ${x.k||''} ${curLine===i+1?'cur':''}" data-ln="${i+1}"><span class="n">${i+1}</span><code>${esc(l.replace(/^\s+/,m=>'·'.repeat(m.length)))}</code><span>${x.e}</span></div>`; }).join('') || '<div class="el"><span></span><span>Напиши программу - здесь появятся пояснения.</span></div>';
-}
-function markLine(ln){ curLine=ln; document.querySelectorAll('#expl .el').forEach(e=>e.classList.toggle('cur',+e.dataset.ln===ln)); const c=document.querySelector(`#expl .el[data-ln="${ln}"]`); if(c){ const b=$('#expl'); const top=c.offsetTop-b.offsetTop; if(top<b.scrollTop||top>b.scrollTop+b.clientHeight-40) b.scrollTop=top-60; } }
+/* --- состояние и прогресс --- */
+let PY=null;
+const pyDoneT=t=>!!P['x:py_'+t.id];
+const pyDone=()=>PYT.filter(pyDoneT).length;
+const pyUnlocked=i=>i>=0&&i<PYT.length&&(i===0||pyDoneT(PYT[i-1]));
+function pySave(){ lsSet2('agro_py5',{i:PY.i, sel:PY.sel}); }
+function pyLoad(){ const s=lsGet2('agro_py5',{})||{}, first=PYT.findIndex(t=>!pyDoneT(t));
+  PY={i:Number.isInteger(s.i)&&pyUnlocked(s.i)?s.i:Math.max(0,first), sel:(s.sel&&typeof s.sel==='object')?s.sel:{}, act:0, bad:null, busy:false, run:0}; }
+const pySel=T=>{ let s=PY.sel[T.id]; if(!Array.isArray(s)||s.length!==T.gaps.length) s=PY.sel[T.id]=T.gaps.map(()=>null); return s; };
 
-/* --- поле, телеметрия и анимация --- */
-const SC=28, OX=280, OY=330;   // 1 м = 28 px, площадка H
-let tele={x:0,y:0,a:0,ph:0,bat:100,air:false};
-function renderTele(){ const t=tele, head=((Math.round(t.a)%360)+360)%360;
-  $('#tele').innerHTML=`<span>📍 X ${fmtN(t.x)} м · Y ${fmtN(t.y)} м</span><span>🧭 ${head}°</span><span>📸 ${t.ph}</span><span class="${t.bat<25?'lowb':''}">🔋 ${Math.max(0,Math.round(t.bat))}%</span><span>${t.air?'🟢 в воздухе':'⚪ на земле'}</span>`; }
-function drawSim(trail, st, photos=[]){
-  const c=$('#sim'), g=c.getContext('2d'); g.clearRect(0,0,c.width,c.height);
-  g.fillStyle='#10301a'; g.fillRect(0,0,c.width,c.height);
-  for(let y=10;y<c.height;y+=22){ g.fillStyle='rgba(74,222,128,.16)'; g.fillRect(0,y,c.width,9); }
-  g.strokeStyle='rgba(255,255,255,.06)'; g.lineWidth=1; for(let x=0;x<c.width;x+=SC){ g.beginPath(); g.moveTo(x,0); g.lineTo(x,c.height); g.stroke(); } for(let y=0;y<c.height;y+=SC){ g.beginPath(); g.moveTo(0,y); g.lineTo(c.width,y); g.stroke(); }
-  g.fillStyle='rgba(255,255,255,.35)'; g.font='10px Manrope'; g.textAlign='left'; g.fillText('1 клетка = 1 м', 8, c.height-8);
-  g.fillStyle='rgba(250,204,21,.9)'; g.beginPath(); g.arc(OX,OY,11,0,7); g.fill(); g.fillStyle='#10301a'; g.font='bold 12px Manrope'; g.textAlign='center'; g.fillText('H',OX,OY+4);
-  if(trail.length>1){ g.strokeStyle='#38bdf8'; g.lineWidth=3; g.setLineDash([7,6]); g.beginPath(); trail.forEach((p,i)=>i?g.lineTo(p.x,p.y):g.moveTo(p.x,p.y)); g.stroke(); g.setLineDash([]); }
-  photos.forEach((p,i)=>{ g.strokeStyle='#fde047'; g.lineWidth=2; g.strokeRect(p.x-14,p.y-14,28,28); g.fillStyle='rgba(253,224,71,.18)'; g.fillRect(p.x-14,p.y-14,28,28); g.fillStyle='#fde047'; g.font='bold 10px Manrope'; g.fillText(String(i+1),p.x,p.y+4); });
-  if(st){ g.save(); g.translate(st.x,st.y); g.rotate(st.a*Math.PI/180); const s=st.z>0?1.15:0.9;
-    if(st.z>0){ g.fillStyle='rgba(0,0,0,.25)'; g.beginPath(); g.ellipse(6,8,16,12,0,0,7); g.fill(); }
-    g.scale(s,s); g.strokeStyle='#fff'; g.lineWidth=4; g.beginPath(); g.moveTo(-12,-12); g.lineTo(12,12); g.moveTo(12,-12); g.lineTo(-12,12); g.stroke();
-    [[-12,-12],[12,-12],[-12,12],[12,12]].forEach(([x,y])=>{ g.beginPath(); g.arc(x,y,7,0,7); g.fillStyle='rgba(255,255,255,.25)'; g.fill(); g.strokeStyle='#fff'; g.lineWidth=1.5; g.stroke(); });
-    g.fillStyle='#fff'; g.fillRect(-6,-6,12,12); g.fillStyle='#ef4444'; g.beginPath(); g.moveTo(0,-16); g.lineTo(-5,-8); g.lineTo(5,-8); g.fill(); g.restore(); }
-}
-let simStop=false, simRunning=false, curMission=null;
-async function runSim(ev){
-  if(simRunning) return; const out=$('#simOut'); out.className='out'; simStop=false;
-  let F; try{ F=flatten(parse($('#src').value)); }catch(e){ out.className='out err'; out.textContent=`Ошибка в строке ${e.ln}: ${e.msg}`; markLine(e.ln); $('#nowStep').innerHTML=`🐞 Python остановился на строке <b>${e.ln}</b>. Это нормально - так программисты и находят ошибки.`; return; }
-  const steps=F.steps, src=$('#src').value.split('\n');
-  const st={x:OX,y:OY,a:0,z:0}, trail=[{x:OX,y:OY}], photos=[], prints=[]; let dist=0, fwd=0, turns=0;
-  tele={x:0,y:0,a:0,ph:0,bat:100,air:false}; renderTele();
-  const wait=ms=>new Promise(r=>setTimeout(r,ms));
-  const upd=()=>{ tele.x=(st.x-OX)/SC; tele.y=(OY-st.y)/SC; tele.a=st.a; tele.ph=photos.length; tele.air=st.z>0; renderTele(); };
-  const drain=d=>{ tele.bat-=d; if(tele.bat<=0){ tele.bat=0; renderTele(); throw {ln:curLine, msg:'🔋 Батарея разряжена - дрон аварийно сел. Сократи маршрут.'}; } };
-  const anim=async(to,ms)=>{ const fr={...st}, t0=performance.now(); while(true){ if(simStop) throw 'stop'; const p=Math.min(1,(performance.now()-t0)/ms), e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
-      st.x=fr.x+(to.x-fr.x)*e; st.y=fr.y+(to.y-fr.y)*e; st.a=fr.a+(to.a-fr.a)*e; st.z=fr.z+(to.z-fr.z)*e; trail[trail.length-1]={x:st.x,y:st.y}; drawSim(trail,st,photos); upd(); if(p>=1) break; await new Promise(r=>requestAnimationFrame(r)); } };
-  const say=(c,extra)=>{ markLine(c.ln); const x=explainLine(src[c.ln-1]||''); $('#nowStep').innerHTML=`Строка <b>${c.ln}</b>: <code>${esc((src[c.ln-1]||'').trim())}</code><br>${x?x.e:''}${extra||''}`; };
-  simRunning=true; $('#runBtn').disabled=true; if(innerWidth<900) $('#sim').scrollIntoView({behavior:'smooth',block:'center'});
-  try{
-    for(const c of steps){
-      say(c, c.v!==null&&c.v!==undefined&&c.a&&!/^-?\d+(\.\d+)?$/.test(c.a)?` <b>Сейчас (${esc(c.a)}) = ${fmtN(c.v)}</b>`:'');
-      if(c.op==='set'){ await wait(200); continue; }
-      if(c.op==='print'){ prints.push(c.txt); out.textContent='💬 '+prints.join('\n💬 '); await wait(300); continue; }
-      if(c.op!=='takeoff' && st.z===0){ throw {ln:c.ln, msg:c.op==='land'?'Дрон и так на земле':'Дрон ещё на земле - сначала takeoff()'}; }
-      if(c.op==='takeoff'){ if(st.z>0) throw {ln:c.ln, msg:'Дрон уже в воздухе'}; drain(3); await anim({...st,z:1},500); continue; }
-      if(c.op==='land'){ await anim({...st,z:0},500); continue; }
-      if(c.op==='photo'){ drain(.4); photos.push({x:st.x,y:st.y}); drawSim(trail,st,photos); upd(); await wait(260); continue; }
-      if(c.op==='turn'){ const v=c.v??90; turns+=v; drain(Math.abs(v)/300); await anim({...st,a:st.a+v},Math.min(700,Math.abs(v)*5+120)); continue; }
-      if(c.op==='up'||c.op==='down'){ await wait(200); continue; }
-      const d=(c.v??1); if(d<0) throw {ln:c.ln, msg:'Расстояние не может быть отрицательным - используй back() вместо forward()'};
-      const ang={forward:0,back:180,right:90,left:-90}[c.op], rad=(st.a+ang)*Math.PI/180;
-      const to={...st, x:st.x+Math.sin(rad)*d*SC, y:st.y-Math.cos(rad)*d*SC};
-      if(to.x<10||to.x>550||to.y<10||to.y>410){ throw {ln:c.ln, msg:'Дрон вылетает за границу поля! Уменьши расстояние.'}; }
-      drain(d*.6); trail.push({x:st.x,y:st.y}); await anim(to, 220+d*150); dist+=d; if(c.op==='forward') fwd+=d;
-    }
-    const home=Math.hypot(st.x-OX,st.y-OY)<SC*.35, landed=st.z===0 && steps.some(s=>s.op==='takeoff');
-    const lines=src.filter(l=>stripComment(l).trim()).length;
-    const R={photos:photos.length, dist, fwd, landed, home, lines, loop:F.info.loop, nested:F.info.nested, useVar:F.info.useVar, bat:tele.bat, turns};
-    out.textContent=(prints.length?'💬 '+prints.join('\n💬 ')+'\n':'')+`✓ Готово: ${steps.length} ${plural(steps.length,'шаг','шага','шагов')}, пролёт ${fmtN(dist)} м, фото: ${photos.length}, заряд ${Math.round(tele.bat)}%.${landed?home?' Посадка точно на H 🎯':'':' Внимание: дрон не приземлился - добавь land().'}`;
-    $('#nowStep').innerHTML='✅ Программа выполнена до конца.'; markLine(0);
-    addXP('run',10,ev);
-    checkMissions(R, ev);
-  }catch(e){ if(e==='stop'){ out.textContent='Остановлено.'; $('#nowStep').textContent='Остановлено.'; }
-    else { out.className='out err'; out.textContent=`Ошибка в строке ${e.ln}: ${e.msg}`; markLine(e.ln); } }
-  finally{ simRunning=false; $('#runBtn').disabled=false; }
+/* --- подсветка кода --- */
+function pyHL(s){ return esc(s).replace(/(#.*$)|(&quot;.*?&quot;)|\b(if|else|for|in|range|print)\b|(\b\d+\b)/g,(m,c,st,kw,n)=>c?`<span class="cm">${c}</span>`:st?`<span class="st">${st}</span>`:kw?`<span class="kw">${kw}</span>`:`<span class="num2">${n}</span>`); }
+/* варианты показываем в перемешанном, но постоянном порядке - верный не всегда первый */
+const pyOrder=(T,g)=>{ const n=T.gaps[g].length, r=(g*2+T.id.charCodeAt(1))%n; return T.gaps[g].map((_,i)=>(i+r)%n); };
+const pyTok=s=>{ const m=s.match(/^( +)(.*)$/); return m?`<span class="ind">${'·'.repeat(m[1].length)}</span>${esc(m[2])}`:esc(s); };
+
+/* --- помощник для анимации сцены --- */
+function pyS(){ const st=$('#pyStage'), svg=st.querySelector('svg'), d=svg.querySelector('.drn'), con=$('#pyCon');
+  return { wait:pyWait, q:s=>svg.querySelector(s), qa:s=>[...svg.querySelectorAll(s)],
+    print(t,c=''){ const e=document.createElement('div'); e.className='cl '+c; e.textContent=t; con.appendChild(e); con.scrollTop=con.scrollHeight; },
+    mv(x,y,ms=600){ d.style.transitionDuration=ms+'ms'; d.style.transform=`translate(${x}px,${y}px)`; return pyWait(ms+40); },
+    tag(t){ const g=d.querySelector('.drn-tag'), tx=g.querySelector('text'), r=g.querySelector('rect'); g.style.opacity=t?1:0; if(!t) return; tx.textContent=t;
+      let w=t.length*7+16; try{ w=tx.getComputedTextLength()+18; }catch(e){} r.setAttribute('x',-w/2); r.setAttribute('width',w); },
+    shake(){ d.classList.remove('shk'); void d.getBoundingClientRect(); d.classList.add('shk'); },
+    pop(sel){ const e=svg.querySelector(sel); if(e&&e.animate) e.animate([{opacity:.3},{opacity:1}],{duration:500}); },
+    bubble(t){ const b=$('#pyBub'); if(!b) return; b.classList.remove('on'); void b.offsetWidth; b.textContent=t; b.classList.add('on'); },
+    chip(t,c=''){ const e=document.createElement('span'); e.className=c; e.textContent=t; $('#pyChips').appendChild(e); return e; } };
 }
 
-/* --- миссии --- */
-const MISSIONS=[
-  {id:'m1', e:'🛫', t:'Первый полёт', lv:'легко', d:'Взлети, пролети вперёд хотя бы 3 м и приземлись.', start:'takeoff()\n# напиши здесь команду полёта вперёд\nland()', ok:R=>R.landed&&R.fwd>=3},
-  {id:'m2', e:'🏠', t:'Вернись на базу', lv:'легко', d:'Облети любую фигуру (не меньше 4 м пути) и сядь точно на площадку H.', start:'takeoff()\n\nland()', ok:R=>R.landed&&R.home&&R.dist>=4},
-  {id:'m3', e:'📸', t:'Фотограф', lv:'средне', d:'Сделай 6 фото, используя цикл for. Совет: photo() внутри цикла.', start:'takeoff()\nfor i in range(3):\n    forward(2)\n    photo()\nland()', ok:R=>R.landed&&R.photos>=6&&R.loop},
-  {id:'m4', e:'✂', t:'Коротко и ясно', lv:'средне', d:'Облети квадрат и вернись на H. Программа - не длиннее 5 строк (комментарии не считаются).', start:'takeoff()\nforward(3)\nturn(90)\nforward(3)\nturn(90)\nforward(3)\nturn(90)\nforward(3)\nturn(90)\nland()', ok:R=>R.landed&&R.home&&R.lines<=5&&R.loop},
-  {id:'m5', e:'🌀', t:'Спираль', lv:'средне', d:'Пусть дрон с каждым повтором летит дальше: используй счётчик цикла внутри команды, например forward(i + 1).', start:'takeoff()\nfor i in range(5):\n    forward(2)\n    turn(90)\nland()', ok:R=>R.landed&&R.useVar},
-  {id:'m6', e:'🌾', t:'Агроскан', lv:'сложно', d:'Сними поле сеткой: минимум 9 фото с помощью цикла внутри цикла, и вернись на H.', start:'takeoff()\nfor ряд in range(3):\n    # вложи сюда второй цикл со снимками\n    right(3)\nland()', ok:R=>R.landed&&R.home&&R.nested&&R.photos>=9},
-  {id:'m7', e:'🔋', t:'Береги заряд', lv:'сложно', d:'Сделай 8 фото и приземлись, сохранив больше 70% батареи.', start:'takeoff()\n\nland()', ok:R=>R.landed&&R.photos>=8&&R.bat>70}
-];
-function renderMissions(){
-  $('#missionsL').innerHTML=MISSIONS.map(m=>{ const done=!!P['x:'+m.id]; return `<div class="mis ${done?'done':''} ${curMission===m.id?'cur':''}" data-id="${m.id}">
-    <div class="mt"><span class="mi">${m.e}</span><div><span class="lv">${m.lv}</span><h4>${m.t}</h4></div><span class="st" style="margin-left:auto">⭐</span></div>
-    <p>${m.d}</p><div class="row" style="margin:0"><button class="ibtn sm ${done?'':'pri'}">${done?'Пройти ещё раз':curMission===m.id?'Миссия активна ✓':'Начать миссию'}</button><small style="color:var(--dim)">+30 XP</small></div></div>`; }).join('');
-  document.querySelectorAll('.mis button').forEach(b=>b.onclick=()=>{ const m=MISSIONS.find(x=>x.id===b.closest('.mis').dataset.id); curMission=m.id; $('#src').value=m.start; renderExpl();
-    $('#pDesc').innerHTML=`🎯 <b>Миссия "${m.t}":</b> ${m.d}`; renderMissions(); document.getElementById('simT').scrollIntoView({behavior:'smooth'}); });
+/* --- отрисовка --- */
+function pySteps(){
+  $('#pyCnt').textContent=`выполнено ${pyDone()} из ${PYT.length}`;
+  $('#pySteps').innerHTML=PYT.map((t,i)=>{ const d=pyDoneT(t), u=pyUnlocked(i);
+    return `<button class="pystep ${i===PY.i?'cur':''} ${d?'done':''} ${u?'':'lock'}" data-i="${i}" aria-label="Задание ${i+1}: ${esc(t.title)}"><span class="n">${d?'⭐':u?i+1:'🔒'}</span><span class="tx"><b>${esc(t.title)}</b><small>${esc(t.short)}</small></span></button>`; }).join('');
+  document.querySelectorAll('#pySteps .pystep').forEach(b=>b.onclick=()=>{ const i=+b.dataset.i; if(!pyUnlocked(i)){ toast(`🔒 Сначала выполни задание ${i}`); return; } pyOpen(i,true); });
+  $('#pyCheat').innerHTML=PYT.map((t,i)=>`<div class="${pyDoneT(t)?'done':''}"><div class="pch"><span>${i+1}</span><b>${esc(t.cheat.t)}</b>${pyDoneT(t)?'<em>⭐</em>':''}</div><pre>${pyHL(t.cheat.c)}</pre><p>${esc(t.cheat.d)}</p></div>`).join('');
 }
-function checkMissions(R, ev){
-  const got=MISSIONS.filter(m=>m.id===curMission&&m.ok(R)&&!P['x:'+m.id]);   // засчитываем только начатую миссию
-  got.forEach((m,i)=>setTimeout(()=>{ addXP(m.id,30,ev); toast(`⭐ Миссия "${m.t}" выполнена!`); renderMissions(); },500+i*900));
-  if(curMission && !got.some(m=>m.id===curMission) && !P['x:'+curMission]){ const m=MISSIONS.find(x=>x.id===curMission); setTimeout(()=>toast(`Миссия "${m.t}" пока не выполнена - перечитай условие`),400); }
+function pyCode(){
+  const T=PYT[PY.i], sel=pySel(T);
+  $('#pyCode').innerHTML=T.code.map((ln,li)=>`<div class="ln"><span class="lno">${li+1}</span><span class="lc">${ln.split(/(\{\d\})/).map(p=>{ const m=p.match(/^\{(\d)\}$/); if(!m) return pyHL(p);
+      const g=+m[1], o=sel[g]; return `<button class="gap ${o!=null?'fill':''} ${PY.act===g?'act':''} ${PY.bad===g?'bad':''}" data-g="${g}" aria-label="Пропуск ${g+1}">${o!=null?pyTok(T.gaps[g][o]):`<i>${g+1}</i>?`}</button>`; }).join('')}</span></div>`).join('');
+  const g=PY.act;
+  $('#pyPal').innerHTML=`<div class="pal-h">Пропуск <span class="gnum">${g+1}</span> - выбери, что туда вставить:</div><div class="pal">${pyOrder(T,g).map(k=>`<button class="tok ${sel[g]===k?'on':''}" data-k="${k}">${pyTok(T.gaps[g][k])}</button>`).join('')}</div>`;
+  document.querySelectorAll('#pyCode .gap').forEach(b=>b.onclick=()=>{ PY.act=+b.dataset.g; pyCode(); });
+  document.querySelectorAll('#pyPal .tok').forEach(b=>b.onclick=()=>{ if(PY.busy) return; sel[g]=+b.dataset.k; if(PY.bad===g) PY.bad=null;
+    const nx=sel.findIndex((x,i)=>x==null&&i>g), any=sel.findIndex(x=>x==null); PY.act=nx>=0?nx:any>=0?any:g; pySave(); pyCode();
+    if(sel.every(x=>x!=null)) pyFb('tip','Все пропуски заполнены. Жми "▶ Запустить"!'); });
 }
-
-/* --- шпаргалка --- */
-const FLIPS=[
-  {e:'🎮', t:'Команда', s:'приказ дрону', g:'#2563eb,#7c3aed', b:'Команда (в Python - функция) говорит компьютеру, что сделать. Скобки () обязательны: они значат "выполни".', c:'takeoff()\nphoto()'},
-  {e:'🔢', t:'Аргумент', s:'уточнение в скобках', g:'#0891b2,#2563eb', b:'Число в скобках уточняет команду: на сколько метров лететь или на сколько градусов повернуть.', c:'forward(3)   # 3 метра\nturn(90)     # 90 градусов'},
-  {e:'🔁', t:'Цикл for', s:'повтори N раз', g:'#16a34a,#0d9488', b:'Вместо 8 строк - 3. range(4) значит "4 раза". Программисты ленивы - и это хорошо!', c:'for i in range(4):\n    forward(2)\n    turn(90)'},
-  {e:'↔', t:'Отступ', s:'4 пробела', g:'#ca8a04,#ea580c', b:'Строки с отступом - внутри цикла. В Python отступ - часть языка: без него программа не запустится.', c:'for i in range(2):\n    photo()   # внутри\nland()        # после цикла'},
-  {e:'📦', t:'Переменная', s:'коробка с именем', g:'#db2777,#7c3aed', b:'Запоминает значение под именем. Поменял число в одном месте - оно поменялось везде.', c:'шаг = 3\nforward(шаг)\nforward(шаг * 2)'},
-  {e:'🔀', t:'Условие if', s:'если..., то...', g:'#dc2626,#ea580c', b:'Программа сама принимает решение. Так дрон возвращается домой при низком заряде.', c:'if заряд < 20:\n    land()\nelse:\n    forward(5)'},
-  {e:'📋', t:'Список', s:'много в одном', g:'#0d9488,#65a30d', b:'Хранит несколько значений по порядку. Счёт идёт с нуля: поля[0] - первый элемент.', c:'поля = ["пшеница", "рапс"]\nprint(len(поля))  # 2'},
-  {e:'💬', t:'Комментарий', s:'заметка для людей', g:'#475569,#1e293b', b:'Всё после # компьютер пропускает. Пиши комментарии - через месяц сам скажешь себе спасибо.', c:'# облёт поля, высота 10 м\ntakeoff()'},
-  {e:'🖨', t:'print()', s:'покажи на экране', g:'#7c3aed,#2563eb', b:'Выводит текст или число. Главный способ "спросить" программу, что у неё внутри.', c:'шаг = 3\nprint("Шаг:", шаг)'},
-  {e:'🐞', t:'Ошибка (баг)', s:'это нормально!', g:'#be123c,#9f1239', b:'Python пишет номер строки и что не так. Ошибаются все программисты - хорошие просто быстро находят баги.', c:'for i in range(4)   # нет ":"\n# SyntaxError'}
-];
-function renderFlips(){
-  $('#flips').innerHTML=FLIPS.map((f,i)=>`<div class="flip" data-i="${i}"><div class="fi"><div class="ff" style="background:linear-gradient(135deg,${f.g})"><span class="e">${f.e}</span><div><h4>${f.t}</h4><small>${f.s}</small></div><small style="opacity:.75">нажми, чтобы перевернуть ↻</small></div>
-    <div class="fb"><b>${f.t}</b><span>${f.b}</span><pre>${esc(f.c)}</pre></div></div></div>`).join('');
-  document.querySelectorAll('#flips .flip').forEach(e=>e.onclick=ev=>{ e.classList.toggle('on'); if(e.classList.contains('on')) addXP('cf'+e.dataset.i,2,ev); });
+function pyFb(kind,html){ const f=$('#pyFb'); f.className='pyt-fb on '+kind; f.innerHTML=html; }
+function pyOpen(i,scroll){
+  PY.i=i; PY.run++; PY.busy=false; PY.bad=null; const T=PYT[i], sel=pySel(T); const e=sel.findIndex(x=>x==null); PY.act=e>=0?e:0; pySave();
+  const done=pyDoneT(T);
+  $('#pyTask').innerHTML=`<div class="card pyt">
+    <div class="pyt-top"><span class="pyt-k">Задание ${i+1} из ${PYT.length}</span><span class="badge">${esc(T.short)}</span>${done?'<span class="badge ok">⭐ выполнено</span>':''}</div>
+    <h3 class="pyt-h"><span class="pyt-e">${T.e}</span>${esc(T.title)}</h3>
+    <div class="pyt-goal"><b>🎯 Цель:</b> ${esc(T.goal)}</div>
+    <div class="pyt-grid">
+      <div>
+        <div class="pyt-learn"><div class="pyt-lh">📘 Что узнаешь</div><p>${T.learn}</p>
+          <div class="pyt-ex"><pre>${pyHL(T.ex)}</pre><div class="pyt-exo"><small>на экране</small>${esc(T.exOut)}</div></div></div>
+        <div class="pyt-lh" style="margin-top:16px">🧩 Собери программу</div>
+        <p class="pyt-sub">Нажми на жёлтый пропуск, потом выбери под кодом подходящий кусочек.</p>
+        <div class="pyt-code" id="pyCode"></div>
+        <div class="pyt-pal" id="pyPal"></div>
+        <div class="row pyt-btns"><button class="ibtn pri" id="pyRun">▶ Запустить</button><button class="ibtn sm" id="pyTip">💡 Подсказка</button><button class="ibtn sm" id="pyReset">↺ Заново</button></div>
+      </div>
+      <div class="pyt-right">
+        <div class="pyt-stage" id="pyStage">${T.stage()}</div>
+        <div class="pyt-con"><div class="pyt-ch"><span>●●●</span>Что вывела программа</div><div id="pyCon"><div class="cl sys">Нажми "▶ Запустить" - здесь появится то, что выведет программа.</div></div></div>
+        <div class="pyt-fb" id="pyFb"></div>
+      </div>
+    </div>
+    <div class="pyt-nav">${i>0?`<button class="ibtn sm" id="pyPrev">← Задание ${i}</button>`:'<span></span>'}${i<PYT.length-1?`<button class="ibtn sm" id="pyNx" ${pyUnlocked(i+1)?'':'disabled title="Сначала выполни это задание"'}>Задание ${i+2} ${pyUnlocked(i+1)?'→':'🔒'}</button>`:''}</div>
+  </div>`;
+  pySteps(); pyCode();
+  $('#pyRun').onclick=pyRun;
+  $('#pyTip').onclick=()=>pyFb('tip','💡 '+esc(T.tip));
+  $('#pyReset').onclick=()=>{ PY.sel[T.id]=T.gaps.map(()=>null); pySave(); pyOpen(i); };
+  const pv=$('#pyPrev'); if(pv) pv.onclick=()=>pyOpen(i-1,true);
+  const nx=$('#pyNx'); if(nx) nx.onclick=()=>{ if(pyUnlocked(i+1)) pyOpen(i+1,true); };
+  if(done) pyFb('ok',`<div class="fbh">⭐ Задание уже выполнено</div><p>Можешь запустить программу ещё раз или поэкспериментировать с другими вариантами - так тоже учатся.</p>${pyNextBtn()}`), pyBindNext();
+  if(scroll) document.getElementById('pySteps').scrollIntoView({behavior:'smooth',block:'start'});
 }
-
-/* --- викторина по коду --- */
-const PYQ=[
-  {q:'Сколько фото сделает дрон?', c:'for i in range(3):\n    photo()', o:['1','3','4','0'], r:1, e:'range(3) - это три повтора (0, 1, 2), значит, три фото.'},
-  {q:'Что нарисует дрон?', c:'for i in range(4):\n    forward(2)\n    turn(90)', o:['Линию','Квадрат и вернётся на старт','Треугольник','Круг'], r:1, e:'4 стороны по 2 м и 4 поворота по 90° - квадрат. 4 x 90° = 360°, дрон смотрит туда же, куда в начале.'},
-  {q:'А эта программа?', c:'for i in range(3):\n    forward(4)\n    turn(120)', o:['Квадрат','Треугольник','Звезду','Шестиугольник'], r:1, e:'3 стороны и поворот 120°. 3 x 120° = 360° - замкнутый треугольник.'},
-  {q:'Что выведет код?', c:'print(2 + 3 * 4)', o:['20','14','234','9'], r:1, e:'Сначала умножение: 3 * 4 = 12, потом 2 + 12 = 14. Как в математике.'},
-  {q:'Что выведет код?', c:'n = 5\nn = n + 1\nprint(n)', o:['5','6','n + 1','Ошибку'], r:1, e:'Взяли 5, прибавили 1 и положили обратно в n. Теперь там 6.'},
-  {q:'Что выведет код?', c:'for i in range(3):\n    print(i)', o:['1 2 3','0 1 2','3 3 3','0 1 2 3'], r:1, e:'Счёт в Python начинается с нуля. range(3) - это 0, 1, 2.'},
-  {q:'Что случится?', c:'for i in range(4)\n    forward(2)', o:['Дрон пролетит 8 м','Ошибка: нет двоеточия','Дрон пролетит 2 м','Ничего'], r:1, e:'После for ... in range(...) обязательно двоеточие. Без него - SyntaxError.'},
-  {q:'Что выведет код?', c:'поля = ["пшеница", "ячмень", "рапс"]\nprint(len(поля))', o:['3','2','пшеница','ячмень'], r:0, e:'len() считает, сколько элементов в списке. Их три.'},
-  {q:'Что выведет код?', c:'заряд = 15\nif заряд < 20:\n    print("Домой!")\nelse:\n    print("Летим дальше")', o:['Домой!','Летим дальше','15','Ничего'], r:0, e:'15 меньше 20 - условие верно, выполняется первая ветка. Так дрон бережёт батарею.'},
-  {q:'Сколько метров пролетит дрон?', c:'for i in range(3):\n    forward(i + 1)', o:['3 м','6 м','9 м','4 м'], r:1, e:'i = 0, 1, 2, значит, forward(1), forward(2), forward(3). 1 + 2 + 3 = 6 м.'}
-];
-let pqI=0, pqRes=[];
-function renderPyQuiz(){
-  const box=$('#pyQuiz'); box.classList.add('qz');
-  if(pqI>=PYQ.length){ const sc=pqRes.filter(Boolean).length; box.innerHTML=`<div class="fin"><div class="sc" style="color:${sc>=8?'var(--ok)':sc>=5?'var(--warn)':'var(--bad)'}">${sc} / ${PYQ.length}</div><p>${sc>=8?'Мощно! Ты мыслишь как программист 🧠':sc>=5?'Хорошо! Загляни в шпаргалку и попробуй ещё раз.':'Начало положено! Переверни карточки шпаргалки - и снова в бой.'}</p><button class="ibtn pri" id="pqAgain">Пройти ещё раз</button></div>`;
-    $('#pqAgain').onclick=()=>{ pqI=0; pqRes=[]; renderPyQuiz(); }; return; }
-  const Q=PYQ[pqI];
-  box.innerHTML=`<div class="qtop"><b>Вопрос ${pqI+1} из ${PYQ.length}</b><div class="dots">${PYQ.map((_,k)=>`<i class="${k<pqRes.length?(pqRes[k]?'ok':'no'):k===pqI?'cur':''}"></i>`).join('')}</div></div>
-    <div class="qq">${esc(Q.q)}</div><pre>${esc(Q.c)}</pre><div class="qo">${Q.o.map((o,k)=>`<button data-k="${k}">${esc(o)}</button>`).join('')}</div><div id="pqE"></div>`;
-  box.querySelectorAll('.qo button').forEach(b=>b.onclick=ev=>{ const k=+b.dataset.k, ok=k===Q.r; pqRes.push(ok);
-    box.querySelectorAll('.qo button').forEach(x=>{ x.disabled=true; if(+x.dataset.k===Q.r) x.classList.add('right'); }); if(!ok) b.classList.add('wrong');
-    if(ok) addXP('pq'+pqI,5,ev);
-    $('#pqE').innerHTML=`<div class="qe"><b>${ok?'✅ Верно!':'❌ Не совсем.'}</b> ${esc(Q.e)}<div class="row" style="margin-bottom:0"><button class="ibtn pri sm" id="pqNext">${pqI+1<PYQ.length?'Следующий →':'Результат'}</button></div></div>`;
-    $('#pqNext').onclick=()=>{ pqI++; renderPyQuiz(); }; });
+function pyNextBtn(){ const i=PY.i; if(i<PYT.length-1) return `<div class="row"><button class="ibtn pri" id="pyGoNext">Задание ${i+2}: ${esc(PYT[i+1].title)} →</button></div>`;
+  return `<div class="row"><button class="ibtn pri" id="pyGoMod">Дальше: Python на настоящем дроне (модуль 7) →</button></div>`; }
+function pyBindNext(){ const a=$('#pyGoNext'); if(a) a.onclick=()=>pyOpen(PY.i+1,true); const b=$('#pyGoMod'); if(b) b.onclick=()=>openMod('m7'); }
+async function pyRun(){
+  if(PY.busy) return; const T=PYT[PY.i], sel=pySel(T), left=sel.filter(x=>x==null).length;
+  if(left){ PY.act=sel.findIndex(x=>x==null); pyCode(); pyFb('bad',`Сначала заполни все пропуски - ${left===1?'остался 1 пропуск':'осталось пропусков: '+left}. Пропуск ${PY.act+1} подсвечен.`); return; }
+  PY.busy=true; const tok=++PY.run; PY.bad=null; pyCode(); $('#pyRun').disabled=true;
+  $('#pyStage').innerHTML=T.stage(); $('#pyCon').innerHTML=''; pyFb('run','▶ Программа выполняется - смотри на дрона...');
+  if(innerWidth<900) $('#pyStage').scrollIntoView({behavior:'smooth',block:'center'});
+  await pyWait(60); let R;
+  try{ R=await T.run(sel.slice(),pyS()); }catch(e){ console.error(e); R={hint:'Что-то пошло не так. Попробуй запустить ещё раз.'}; }
+  if(tok!==PY.run) return;
+  PY.busy=false; $('#pyRun').disabled=false;
+  if(R.ok){
+    if(pyDoneT(T)){ pyFb('ok',`<div class="fbh">🎉 Получилось!</div><p>${esc(R.praise)}</p>${pyNextBtn()}`); pyBindNext(); }
+    else { pyFb('ok',`<div class="fbh">🎉 Получилось!</div><p>${esc(R.praise)}</p><div class="row"><button class="ibtn pri" id="pyDoneB">✓ Готово: +${T.xp} XP и ⭐</button></div>`);
+      $('#pyDoneB').onclick=ev=>{ addXP('py_'+T.id,T.xp,ev); toast(`⭐ Задание ${PY.i+1} выполнено!`); pySteps();
+        const last=pyDone()===PYT.length;
+        pyFb('ok',`<div class="fbh">⭐ Задание ${PY.i+1} выполнено!</div><p>${last?'Ты прошёл все 5 заданий: переменные, арифметику, условия, циклы и списки. Это основа любой программы - в том числе для настоящего дрона.':'Следующее задание открыто. В нём пригодится то, что ты только что узнал.'}</p>${pyNextBtn()}`); pyBindNext();
+        const nx=$('#pyNx'); if(nx){ nx.disabled=false; nx.textContent=`Задание ${PY.i+2} →`; } }; }
+  } else { PY.bad=R.gap??null; if(PY.bad!=null) PY.act=PY.bad; pyCode(); pyFb('bad',`<div class="fbh">Почти! Давай разберёмся</div><p>${esc(R.hint)}</p>${PY.bad!=null?`<small>Пропуск ${PY.bad+1} подсвечен красным - выбери другой вариант и запусти снова.</small>`:''}`); }
 }
-
-/* --- где живёт Python --- */
-const LIFE=[
-  {e:'🤖', t:'Нейросети', d:'Большинство моделей ИИ создают и обучают на Python.', g:'#7c3aed,#db2777'},
-  {e:'🛰', t:'Дроны и спутники', d:'Обработка снимков полей, планирование маршрутов, наземные станции.', g:'#0f766e,#0ea5e9'},
-  {e:'🌾', t:'Умное сельское хозяйство', d:'Прогноз урожая, карты полива и удобрений, анализ почвы.', g:'#15803d,#84cc16'},
-  {e:'🎮', t:'Игры и боты', d:'Игры на Pygame, боты для Telegram и VK - первые проекты многих ребят.', g:'#ea580c,#f59e0b'},
-  {e:'📊', t:'Данные и наука', d:'Графики, таблицы, расчёты - на Python считают учёные по всему миру.', g:'#1d4ed8,#6366f1'}
-];
 
 let pyInit=false;
 function initPy(){
   if(pyInit) return; pyInit=true;
-  $('#show').innerHTML=SHOW.map((s,k)=>`<div class="sc2" data-k="${k}" style="background:linear-gradient(135deg,${s.g})"><span class="big">${ic(s.i,110)}</span>${ic(s.i,26)}<h4>${s.t}</h4><p>${s.d}</p></div>`).join('');
-  document.querySelectorAll('.sc2').forEach(e=>e.onclick=()=>{ const s=SHOW[+e.dataset.k]; if(s.go) document.getElementById(s.go).scrollIntoView({behavior:'smooth',block:'start'}); else if(s.mod) openMod(s.mod); else if(s.view) document.querySelector(`#nav button[data-v="${s.view}"]`).click(); });
-  reveal('.sc2');
-  const names=Object.keys(PRESETS), pick=v=>{ curMission=null; $('#src').value=PRESETS[v].c; $('#pDesc').innerHTML='💡 '+PRESETS[v].d; drawSim([], {x:OX,y:OY,a:0,z:0}); tele={x:0,y:0,a:0,ph:0,bat:100,air:false}; renderTele(); curLine=0; renderExpl(); $('#simOut').className='out'; $('#simOut').textContent='Программа загружена. Нажми "Запустить".'; $('#nowStep').textContent='Здесь будет видно, какую строку дрон выполняет прямо сейчас.'; renderMissions(); };
-  fancySelect($('#presetSel'), names.map(n=>({v:n,t:n})), names[1], pick); pick(names[1]);
-  let tm; $('#src').oninput=()=>{ clearTimeout(tm); tm=setTimeout(renderExpl,250); };
-  $('#src').onkeydown=e=>{ if(e.key==='Tab'){ e.preventDefault(); const t=e.target, s=t.selectionStart; t.value=t.value.slice(0,s)+'    '+t.value.slice(t.selectionEnd); t.selectionStart=t.selectionEnd=s+4; renderExpl(); } };
-  $('#runBtn').onclick=runSim; $('#stopBtn').onclick=()=>simStop=true;
-  $('#explBtn').onclick=()=>{ explOn=!explOn; $('#explBtn').textContent='🧠 Пояснения: '+(explOn?'вкл':'выкл'); renderExpl(); };
-  renderMissions(); renderFlips(); renderPyQuiz();
-  $('#life').innerHTML=LIFE.map(l=>`<div style="background:linear-gradient(135deg,${l.g})"><span class="e">${l.e}</span><h4>${l.t}</h4><p>${l.d}</p></div>`).join('');
-  reveal('.mis'); reveal('.flip'); reveal('.life>div');
-  initField(); initPoll('#pollPy');
-}
-/* поле и индекс зелени */
-let fieldImg=null, showMask=false;
-function initField(){ newField(); $('#thr').oninput=calcField; $('#newField').onclick=newField; $('#showMask').onclick=()=>{ showMask=!showMask; $('#showMask').textContent=showMask?'Показать фото':'Показать карту зон'; calcField(); }; }
-function newField(){
-  const c=$('#fieldC'), g=c.getContext('2d'), W=c.width, H=c.height;
-  const spots=Array.from({length:3+Math.floor(Math.random()*3)},()=>({x:Math.random()*W, y:Math.random()*H, r:30+Math.random()*60}));
-  const img=g.createImageData(W,H);
-  for(let y=0;y<H;y++) for(let x=0;x<W;x++){
-    const row=Math.sin(y/5)*0.5+0.5, noise=Math.random()*0.25;
-    let health=0.55+row*0.35+noise; spots.forEach(s=>{ const d=Math.hypot(x-s.x,y-s.y); if(d<s.r) health-= (1-d/s.r)*1.1; });
-    health=Math.max(0,Math.min(1,health));
-    const i=(y*W+x)*4;
-    img.data[i]=Math.round(150-90*health+Math.random()*20); img.data[i+1]=Math.round(110+80*health+Math.random()*20); img.data[i+2]=Math.round(60-20*health+Math.random()*15); img.data[i+3]=255;
-  }
-  fieldImg=img; calcField();
-}
-function calcField(){
-  const c=$('#fieldC'), g=c.getContext('2d'), thr=+$('#thr').value; $('#thrV').textContent=thr;
-  const src=fieldImg.data, outI=g.createImageData(c.width,c.height), o=outI.data; let ok=0, n=src.length/4;
-  for(let i=0;i<src.length;i+=4){ const r=src[i],gg=src[i+1],b=src[i+2], exg=2*gg-r-b, good=exg>thr; if(good) ok++;
-    if(showMask){ o[i]=good?34:245; o[i+1]=good?197:158; o[i+2]=good?94:11; } else { o[i]=r; o[i+1]=gg; o[i+2]=b; if(!good){ o[i]=Math.min(255,r*0.6+245*0.4); o[i+1]=gg*0.6+158*0.4; o[i+2]=b*0.6+11*0.4; } } o[i+3]=255; }
-  g.putImageData(outI,0,0);
-  const p=Math.round(ok/n*100); $('#mOk').textContent=p+'%'; $('#mBad').textContent=(100-p)+'%';
-  $('#mAct').textContent = 100-p>35?'срочно осмотреть поле':100-p>15?'проверить отмеченные зоны':'посевы в норме';
+  pyLoad(); pyOpen(PY.i);
+  initPoll('#pollPy');
 }
 
 /* ============================================================
@@ -1609,8 +1673,8 @@ function logEv(t,x){ P.log=Array.isArray(P.log)?P.log:[]; P.log.push({d:Date.now
 const XP_NAMES=[[/^m\d+$/,'Миссия в тренажёре выполнена'],[/^cf/,'Карточка шпаргалки'],[/^fx/,'Игра "Чего не хватает"'],[/^my/,'Миф или правда'],[/^nw/,'Игра "Будь нейросетью"'],
   [/^pbcopy/,'Конструктор промпта'],[/^poll_/,'Ответ в опросе'],[/^pq/,'Викторина "Что сделает код"'],[/^run$/,'Первый запуск программы'],[/^neu_ok/,'Нейрон обучен'],
   [/^leaf_ok/,'Модель листьев сдала экзамен'],[/^cam/,'Проверка растений камерой'],[/^conv/,'Фильтры свёртки'],[/^lib_/,'Промпт из библиотеки'],[/^chal/,'Челлендж "Улучши промпт"'],
-  [/^quest_/,'Задание дня выполнено'],[/^note/,'Промпт в блокноте'],[/^dict/,'Словарь ИИ']];
-const XP_KIND=[[/^run$/,'run'],[/^pq/,'pq'],[/^my/,'my'],[/^fx/,'fx'],[/^cf/,'cf'],[/^lib_/,'lib']];
+  [/^quest_/,'Задание дня выполнено'],[/^note/,'Промпт в блокноте'],[/^py_t/,'Задание Python выполнено'],[/^neu_1/,'Нейрон: цель 1'],[/^dictq/,'Проверка словаря ИИ'],[/^dict/,'Словарь ИИ']];
+const XP_KIND=[[/^py_t/,'py'],[/^run$/,'run'],[/^pq/,'pq'],[/^my/,'my'],[/^fx/,'fx'],[/^cf/,'cf'],[/^lib_/,'lib']];
 const _addXP0=addXP;
 addXP=function(id,pts,ev){
   const kk=XP_KIND.find(([re])=>re.test(id)); if(kk) questHit(kk[1]);
@@ -1623,14 +1687,13 @@ addXP=function(id,pts,ev){
 const QUESTS=[
   {k:'lesson', e:'🎬', t:'Посмотри видеоурок и отметь его', go:()=>{ const m=MODULES.find(x=>x.lessons.some((_,i)=>!P[lk(x.id,i)]))||MODULES[0]; openMod(m.id); }},
   {k:'test', e:'📝', t:'Пройди тест любого модуля', go:()=>{ const m=MODULES.find(x=>x.test.length&&!P['t:'+x.id]?.pass)||MODULES[0]; curTab='test'; openMod(m.id); setTimeout(()=>{ curTab='test'; renderMod(); },400); }},
-  {k:'run', e:'🛫', t:'Запусти программу в тренажёре Python', go:()=>goTo('py','simT')},
-  {k:'pq', e:'🐍', t:'Ответь верно на вопрос "Что сделает код?"', go:()=>goTo('py','pyquiz')},
-  {k:'cf', e:'🃏', t:'Переверни карточку в шпаргалке Python', go:()=>goTo('py','cheat')},
+  {k:'py', e:'🐍', t:'Выполни задание в лаборатории Python', go:()=>goTo('py','pyTasks')},
   {k:'my', e:'🕵', t:'Угадай верно в игре "Миф или правда"', go:()=>goTo('ai','mythT')},
   {k:'fx', e:'🧩', t:'Найди, чего не хватает в промпте', go:()=>goTo('ai','fixT')},
   {k:'neu', e:'🧠', t:'Обучи нейрон в ИИ-лаборатории', go:()=>goTo('lab','neuT')},
   {k:'leaf', e:'🍃', t:'Проведи экзамен модели листьев', go:()=>goTo('lab','leafT')},
   {k:'conv', e:'🔍', t:'Попробуй фильтр "Как ИИ видит фото"', go:()=>goTo('lab','convT')},
+  {k:'dict', e:'📖', t:'Пройди проверку словаря ИИ', go:()=>goTo('lab','dictT')},
   {k:'lib', e:'📚', t:'Скопируй промпт из библиотеки', go:()=>goTo('lib','libT')},
   {k:'chal', e:'🏋', t:'Пройди челлендж "Улучши промпт" на 4+ звезды', go:()=>goTo('lib','chalT')}
 ];
@@ -1647,7 +1710,7 @@ const lessonsAll=()=>MODULES.reduce((a,m)=>a+m.lessons.length,0);
 const testsDone=()=>MODULES.filter(m=>P['t:'+m.id]?.pass).length;
 const testsAll=()=>MODULES.filter(m=>m.test.length).length;
 const xpCount=re=>Object.keys(P).filter(k=>k.startsWith('x:')&&re.test(k.slice(2))).length;
-const misDone=()=>MISSIONS.filter(m=>P['x:'+m.id]).length;
+const misDone=()=>['m1','m2','m3','m4','m5','m6','m7'].filter(k=>P['x:'+k]).length;   // миссии старой версии
 const BADGES=[
   ['l1','🎬','Первый урок','Посмотри 1 видеоурок',()=>[lessonsDone(),1]],
   ['l10','🍿','Киноман','Посмотри 10 видеоуроков',()=>[lessonsDone(),10]],
@@ -1656,10 +1719,10 @@ const BADGES=[
   ['t5','🎓','Знаток','Сдай 5 тестов',()=>[testsDone(),5]],
   ['tall','🏛','Профессор','Сдай все тесты',()=>[testsDone(),testsAll()]],
   ['perf','💯','Без ошибок','Любой тест на 100%',()=>[MODULES.some(m=>m.test.length&&P['t:'+m.id]?.score===m.test.length)?1:0,1]],
-  ['run','💻','Первый код','Запусти программу в тренажёре',()=>[P['x:run']?1:0,1]],
-  ['mis3','⭐','Пилот-программист','Выполни 3 миссии',()=>[misDone(),3]],
-  ['misall','🌟','Ас миссий','Выполни все миссии',()=>[misDone(),MISSIONS.length]],
-  ['pq','🐍','Питонист','Все вопросы "Что сделает код?"',()=>[xpCount(/^pq\d/),PYQ.length]],
+  ['run','💻','Первый код','Выполни 1 задание Python',()=>[Math.max(pyDone(),P['x:run']?1:0),1]],
+  ['mis3','⭐','Пилот-программист','Выполни 3 задания Python',()=>[Math.max(pyDone(),misDone()>=3?3:0),3]],
+  ['misall','🐍','Питонист','Все задания Python',()=>[pyDone(),PYT.length]],
+  ['dict','📖','Знаток ИИ','Проверка словаря ИИ на 4+',()=>[P['x:dictq']?1:0,1]],
   ['neu','🧠','Нейрохирург','Научи нейрон решать все ситуации',()=>[P['x:neu_ok']?1:0,1]],
   ['leaf','🍃','Учитель ИИ','Модель листьев: точность от 80%',()=>[P['x:leaf_ok']?1:0,1]],
   ['cam','📷','Агросканер','Проверь растения камерой',()=>[P['x:cam']?1:0,1]],
@@ -1750,58 +1813,83 @@ function drawTop(){
 /* ============================================================
    ИИ-ЛАБОРАТОРИЯ
    ============================================================ */
+/* полоса "Цель" под каждым опытом */
+function goalBar(id, done, html, xp){ const e=document.getElementById(id); if(!e) return;
+  e.className='goalbar'+(done?' done':''); e.innerHTML=`<span class="gi">${done?'✅':'🎯'}</span><div class="gt">${html}</div>${xp?`<span class="gx">${done?'✓ ':''}+${xp} XP</span>`:''}`; }
+/* маршрут лаборатории в шапке */
+const LAB_R=[['neuT','🧠','Нейрон',()=>P['x:neu_ok']],['leafT','🍃','Листья',()=>P['x:leaf_ok']],['convT','🔍','Фильтры',()=>P['x:conv']],['camSec','📷','Камера',()=>P['x:cam']],['dictT','📖','Словарь',()=>P['x:dictq']]];
+function labRoute(){ const b=document.getElementById('labRoute'); if(!b) return; const n=LAB_R.filter(r=>r[3]()).length;
+  b.innerHTML=`<b>Твой маршрут: пройдено ${n} из ${LAB_R.length}</b><div>${LAB_R.map((r,i)=>`<button data-go="${r[0]}" class="${r[3]()?'ok':''}">${r[3]()?'✓':i+1} ${r[1]} ${r[2]}</button>`).join('')}</div>`;
+  b.querySelectorAll('[data-go]').forEach(x=>x.onclick=()=>document.getElementById(x.dataset.go).scrollIntoView({behavior:'smooth',block:'start'})); }
+
 /* --- 1. нейрон: поливать или нет --- */
-const NEU_X=[[20,30,0,1],[15,25,0,1],[70,28,0,0],[25,32,1,0],[60,15,0,0],[35,35,0,1],[80,35,1,0],[30,10,0,0]];
-const NEU_F=[['w1','💧 Влажность почвы',r=>r[0]/100,r=>r[0]+'%'],['w2','🌡 Температура',r=>r[1]/40,r=>r[1]+'°'],['w3','🌧 Дождь в прогнозе',r=>r[2],r=>r[2]?'да':'нет']];
-let NW={w1:0,w2:0,w3:0,b:0}, nSel=0, nIdx=0, nTimer=null;
-const nZ=r=>NW.w1*r[0]/100+NW.w2*r[1]/40+NW.w3*r[2]+NW.b;
+// [влажность %, дождь в прогнозе 0/1, нужно полить 0/1]; первые 5 строк - цель 1, все 8 - цель 2
+const NEU_X=[[10,0,1],[25,0,1],[35,0,1],[55,0,0],[80,0,0],[20,1,0],[30,1,0],[70,1,0]];
+const NSL={w1:['⚖ Вес влажности','минус = мокрая почва против полива'], b:['➕ Смещение','плюс = нейрон охотнее говорит "полить"'], w2:['⚖ Вес дождя','минус = дождь против полива']};
+let NW={w1:0,w2:0,b:0}, nSel=0, nIdx=0, nTimer=null, nLvl=1;
+const nRows=()=>NEU_X.slice(0,nLvl===1?5:8);
+const nZ=r=>NW.w1*r[0]/100+(nLvl>1?NW.w2*r[1]:0)+NW.b;
 const nOut=r=>nZ(r)>0?1:0;
 const f2=v=>(Math.round(v*100)/100).toFixed(2).replace(/\.?0+$/,'')||'0';
-function nRender(flash){
-  $('#nW').innerHTML=[...NEU_F.map(([k,t])=>[k,'Вес: '+t]),['b','Смещение (порог)']].map(([k,t])=>`<div class="nrow"><span>${t}</span><input type="range" class="range" min="-10" max="10" step="0.05" value="${NW[k]}" data-k="${k}"><b>${f2(NW[k])}</b></div>`).join('');
+function nRender(){
+  const ks=nLvl===1?['w1','b']:['w1','b','w2'];
+  $('#nLvl').innerHTML=`<button data-l="1" class="${nLvl===1?'on':''}">Цель 1: сухая почва</button><button data-l="2" class="${nLvl===2?'on':''}" ${P['x:neu_1']?'':'disabled'}>${P['x:neu_1']?'':'🔒 '}Цель 2: + дождь</button>`;
+  $('#nLvl').querySelectorAll('button').forEach(b=>b.onclick=()=>{ if(b.disabled) return; nLvl=+b.dataset.l; if(nSel>=nRows().length) nSel=0; nRender(); });
+  $('#nW').innerHTML=ks.map(k=>`<div class="nrow2"><span class="nlab"><b>${NSL[k][0]}</b><small>${NSL[k][1]}</small></span><input type="range" class="range" min="-5" max="5" step="0.1" value="${NW[k]}" data-k="${k}" aria-label="${NSL[k][0]}"><b class="nv">${f2(NW[k])}</b></div>`).join('');
   $('#nW').querySelectorAll('input').forEach(i=>i.oninput=()=>{ NW[i.dataset.k]=+i.value; i.nextElementSibling.textContent=f2(NW[i.dataset.k]); nDraw(); nCheck(); });
-  nDraw(flash); nCheck();
+  nDraw(); nCheck();
 }
 function nDraw(flash){
-  const r=NEU_X[nSel], z=nZ(r), o=z>0;
-  const xs=NEU_F.map(f=>f[2](r)), ys=[40,100,160];
-  const line=(y,w)=>`<line x1="120" y1="${y}" x2="250" y2="100" stroke="${w>=0?'#16a34a':'#dc2626'}" stroke-width="${1+Math.min(9,Math.abs(w))}" stroke-opacity="${.25+Math.min(.75,Math.abs(w)/10)}" stroke-linecap="round"/>`;
-  $('#nSvg').innerHTML=NEU_F.map((f,i)=>line(ys[i],NW[f[0]])).join('')+
-    NEU_F.map((f,i)=>`<circle cx="100" cy="${ys[i]}" r="22" fill="var(--bg2)" stroke="var(--line)" stroke-width="2"/><text x="100" y="${ys[i]+5}" text-anchor="middle">${f2(xs[i])}</text><text x="70" y="${ys[i]+5}" text-anchor="end" class="sm">${f[3](r)}</text>`).join('')+
-    NEU_F.map((f,i)=>`<text x="${185}" y="${(ys[i]+100)/2-6}" text-anchor="middle" class="sm">w=${f2(NW[f[0]])}</text>`).join('')+
-    `<circle cx="270" cy="100" r="34" fill="${o?'#16a34a':'#64748b'}" opacity=".9"/><text x="270" y="96" text-anchor="middle" style="fill:#fff">Σ</text><text x="270" y="114" text-anchor="middle" style="fill:#fff;font-size:12px">${f2(z)}</text>
-    <line x1="304" y1="100" x2="330" y2="100" stroke="var(--dim)" stroke-width="3"/><text x="336" y="96" style="font-size:15px">${o?'💧 Полить':'⛔ Не надо'}</text><text x="336" y="114" class="sm">ситуация ${nSel+1}</text>`;
-  $('#nForm').innerHTML=`Σ = ${f2(NW.w1)}×${f2(xs[0])} + ${f2(NW.w2)}×${f2(xs[1])} + ${f2(NW.w3)}×${f2(xs[2])} + (${f2(NW.b)}) = <b style="color:${o?'var(--ok)':'var(--bad)'}">${f2(z)}</b> → ${o?'больше 0 → поливаем':'не больше 0 → не поливаем'}`;
-  $('#nTab').innerHTML=`<tr><th>#</th><th>Влажн.</th><th>Темп.</th><th>Дождь</th><th>Нужно</th><th>Нейрон</th></tr>`+NEU_X.map((r,i)=>{ const p=nOut(r), ok=p===r[3];
-    return `<tr data-i="${i}" style="cursor:pointer;${i===nSel?'background:var(--bg2)':''}" class="${flash===i?'flash':''}"><td>${i+1}</td><td>${r[0]}%</td><td>${r[1]}°</td><td>${r[2]?'да':'нет'}</td><td>${r[3]?'💧':'⛔'}</td><td class="${ok?'ok':'no'}">${p?'💧':'⛔'} ${ok?'✓':'✗'}</td></tr>`; }).join('');
+  const R=nRows(), r=R[nSel]||R[0], z=nZ(r), o=z>0;
+  const ins=[['💧 влажность',r[0]/100,r[0]+'%','w1']].concat(nLvl>1?[['🌧 дождь',r[1],r[1]?'да':'нет','w2']]:[]), ys=ins.length===1?[100]:[65,135];
+  const line=(y,w)=>`<line x1="122" y1="${y}" x2="236" y2="100" stroke="${w>=0?'#16a34a':'#dc2626'}" stroke-width="${2+Math.min(8,Math.abs(w)*1.6)}" stroke-opacity="${.3+Math.min(.7,Math.abs(w)/5)}" stroke-linecap="round"/>`;
+  $('#nSvg').innerHTML=ins.map((f,i)=>line(ys[i],NW[f[3]])).join('')+
+    ins.map((f,i)=>`<circle cx="100" cy="${ys[i]}" r="22" fill="var(--bg2)" stroke="var(--line)" stroke-width="2"/><text x="100" y="${ys[i]+5}" text-anchor="middle">${f2(f[1])}</text><text x="74" y="${ys[i]-28}" text-anchor="middle" class="sm">${f[0]}: ${f[2]}</text><text x="180" y="${(ys[i]+100)/2-8}" text-anchor="middle" class="sm">вес ${f2(NW[f[3]])}</text>`).join('')+
+    `<circle cx="266" cy="100" r="34" fill="${o?'#16a34a':'#64748b'}" opacity=".92"/><text x="266" y="96" text-anchor="middle" style="fill:#fff">Σ</text><text x="266" y="114" text-anchor="middle" style="fill:#fff;font-size:12px">${f2(z)}</text>
+    <text x="266" y="160" text-anchor="middle" class="sm">+ смещение ${f2(NW.b)}</text>
+    <line x1="300" y1="100" x2="322" y2="100" stroke="var(--dim)" stroke-width="3"/><text x="328" y="96" style="font-size:15px">${o?'💧 Полить':'⛔ Не надо'}</text><text x="328" y="114" class="sm">строка ${nSel+1}</text>`;
+  $('#nForm').innerHTML=`Σ = ${f2(NW.w1)} × ${f2(r[0]/100)}${nLvl>1?` + ${f2(NW.w2)} × ${r[1]}`:''} + (${f2(NW.b)}) = <b style="color:${o?'var(--ok)':'var(--bad)'}">${f2(z)}</b> → ${o?'больше 0, поливаем':'не больше 0, не поливаем'}`;
+  $('#nTab').innerHTML=`<tr><th>#</th><th>Влажность</th>${nLvl>1?'<th>Дождь</th>':''}<th>Нужно</th><th>Нейрон</th></tr>`+R.map((r,i)=>{ const p=nOut(r), ok=p===r[2];
+    return `<tr data-i="${i}" style="cursor:pointer;${i===nSel?'background:var(--bg2)':''}" class="${flash===i?'flash':''}"><td>${i+1}</td><td>${r[0]}%</td>${nLvl>1?`<td>${r[1]?'🌧 да':'нет'}</td>`:''}<td>${r[2]?'💧':'⛔'}</td><td class="${ok?'ok':'no'}">${p?'💧':'⛔'} ${ok?'✓':'✗'}</td></tr>`; }).join('');
   $('#nTab').querySelectorAll('tr[data-i]').forEach(t=>t.onclick=()=>{ nSel=+t.dataset.i; nDraw(); });
 }
 function nCheck(){
-  const good=NEU_X.filter(r=>nOut(r)===r[3]).length;
-  if(good===NEU_X.length){ $('#nOut').innerHTML=`✅ <b>Все 8 ответов верны!</b> Ты только что увидел, что такое обучение: подобрать веса так, чтобы ошибок не было. Заметь знаки: у влажности и дождя веса отрицательные ("против полива"), у температуры - положительный.`;
-    questHit('neu'); if(addXP('neu_ok',30)) toast('🧠 Нейрон обучен! +30 XP'); }
-  else $('#nOut').innerHTML=`Верных ответов: <b>${good} из ${NEU_X.length}</b>. Подсказка: подумай, какой признак "за" полив, а какой "против", и какой знак должен быть у его веса.`;
+  const R=nRows(), good=R.filter(r=>nOut(r)===r[2]).length, all=good===R.length, wet=R.filter(r=>r[2]===0&&nOut(r)===1).length;
+  let hint;
+  if(all) hint='✅ Все строки верны! Так и выглядит обучение: подобрать веса, чтобы ошибок не было.';
+  else if(NW.w1>=0) hint='Подсказка: сдвинь <b>вес влажности</b> влево, в минус. Чем мокрее почва, тем меньше нужен полив.';
+  else if(nLvl>1&&NW.w2>=0&&R.slice(5).some(r=>nOut(r)!==r[2])) hint='Подсказка: дождь - тоже "против" полива. Сдвинь <b>вес дождя</b> влево, в минус.';
+  else if(good&&!wet) hint='Хорошо! Теперь сдвигай <b>смещение</b> вправо, пока сухие строки (10%, 25%, 35%) не станут ✓.';
+  else if(wet) hint='Нейрон поливает и мокрую почву. Сдвинь <b>смещение</b> чуть левее или вес влажности ещё сильнее в минус.';
+  else hint='Сдвигай <b>смещение</b> вправо понемногу и следи за таблицей.';
+  $('#nOut').innerHTML=hint;
+  if(nLvl===1){
+    if(all&&addXP('neu_1',10)){ toast('🧠 Цель 1 выполнена! +10 XP'); }
+    goalBar('gNeu', all, all?`<b>Цель 1 выполнена!</b> Нейрон говорит "полить" только для сухой почвы.<br><button class="ibtn sm pri" id="nGo2">Цель 2: добавим дождь →</button>`:`<b>Цель 1 из 2:</b> добейся, чтобы нейрон сказал "полить" только для сухой почвы (влажность до 40%). Верно сейчас: <b>${good} из ${R.length}</b>`, 10);
+    const g2=$('#nGo2'); if(g2) g2.onclick=()=>{ nLvl=2; nSel=5; nRender(); document.getElementById('gNeu').scrollIntoView({behavior:'smooth',block:'center'}); };
+  } else {
+    if(all){ questHit('neu'); if(addXP('neu_ok',30)){ toast('🧠 Нейрон обучен! +30 XP'); labRoute(); } }
+    goalBar('gNeu', all, all?`<b>Нейрон обучен!</b> Все 8 ответов верны. Заметь знаки: у влажности и дождя веса отрицательные - они "против" полива.`:`<b>Цель 2 из 2:</b> если обещают дождь, не поливать, даже когда сухо. Верно сейчас: <b>${good} из ${R.length}</b>`, 30);
+  }
 }
 function nStep(){
-  const i=nIdx%NEU_X.length, r=NEU_X[i], p=nOut(r), err=r[3]-p; nIdx++; nSel=i;
-  if(err){ NW.w1=+(NW.w1+err*r[0]/100).toFixed(2); NW.w2=+(NW.w2+err*r[1]/40).toFixed(2); NW.w3=+(NW.w3+err*r[2]).toFixed(2); NW.b=+(NW.b+err).toFixed(2);
-    ['w1','w2','w3','b'].forEach(k=>NW[k]=Math.max(-10,Math.min(10,NW[k]))); }
-  nRender(i);
-  $('#nOut').innerHTML+=`<br><small>Шаг ${nIdx}: ситуация ${i+1} - ${err?`нейрон ошибся, поэтому веса сдвинулись ${err>0?'в сторону "полить"':'в сторону "не поливать"'}.`:'ответ верный, веса не меняем.'}</small>`;
+  const R=nRows(), i=nIdx%R.length, r=R[i], p=nOut(r), err=r[2]-p; nIdx++; nSel=i;
+  if(err){ NW.w1+=err*r[0]/100; if(nLvl>1) NW.w2+=err*r[1]*.5; NW.b+=err*.5; ['w1','w2','b'].forEach(k=>NW[k]=Math.max(-5,Math.min(5,+NW[k].toFixed(2)))); }
+  nRender(); nDraw(i);
   return err!==0;
 }
 function nAuto(){
-  if(nTimer){ clearInterval(nTimer); nTimer=null; $('#nTrain').textContent='🤖 Обучить автоматически'; return; }
+  if(nTimer){ clearInterval(nTimer); nTimer=null; $('#nTrain').textContent='🤖 Пусть учится сам'; return; }
   $('#nTrain').textContent='⏸ Остановить'; let clean=0, steps=0;
   nTimer=setInterval(()=>{ const e=nStep(); steps++; clean=e?0:clean+1;
-    if(clean>=NEU_X.length||steps>400){ clearInterval(nTimer); nTimer=null; $('#nTrain').textContent='🤖 Обучить автоматически';
-      $('#nOut').innerHTML+=`<br><b>${clean>=NEU_X.length?`Готово за ${steps} шагов: целый круг без ошибок.`:'Остановились по лимиту шагов.'}</b>`; } },280);
+    if(clean>=nRows().length||steps>400){ clearInterval(nTimer); nTimer=null; $('#nTrain').textContent='🤖 Пусть учится сам';
+      $('#nOut').innerHTML+=`<br><b>${clean>=nRows().length?`Нейрон научился сам за ${steps} ${plural(steps,'шаг','шага','шагов')}: после каждой ошибки он чуть-чуть сдвигал веса.`:'Остановились по лимиту шагов.'}</b>`; } },160);
 }
 
 /* --- 2. классификатор листьев (k ближайших соседей) --- */
 let LF=null;
 const rnd=(a,b)=>a+Math.random()*(b-a), clamp01=v=>Math.max(0,Math.min(1,v));
-function makeLeaf(){ const h=Math.random(); const hue=45+h*72+rnd(-8,8), spots=Math.max(0,Math.round((1-h)*8+rnd(-1.6,1.6)));
+function makeLeaf(){ const h=Math.random()<.5?rnd(0,.38):rnd(.62,1); const hue=45+h*72+rnd(-6,6), spots=Math.max(0,Math.round((1-h)*8+rnd(-1.2,1.2)));
   return {h, hue, spots, sick:h<0.5, seed:Math.random(), f1:clamp01((hue-40)/80+rnd(-.05,.05)), f2:clamp01(spots/9+rnd(-.05,.05)), lab:null}; }
 function drawLeaf(cv,L){
   const c=cv.getContext('2d'), W=cv.width, H=cv.height; c.clearRect(0,0,W,H);
@@ -1823,21 +1911,23 @@ function leafHTML(L,i,mode){ const cls=mode==='test'?(L.pred===null?'':L.pred?'s
   const ok=mode==='test'&&L.pred!==undefined?(L.pred===L.sick?'right':'wrong'):'';
   const lb=mode==='test'?(L.pred?'🟠 болен':'🟢 здоров')+(L.pred===L.sick?' ✓':' ✗'):L.lab==='h'?'🟢 здоров':L.lab==='s'?'🟠 болен':'нажми';
   return `<div class="leaf ${cls} ${ok}" data-i="${i}"><canvas width="84" height="84"></canvas><span class="lb">${lb}</span></div>`; }
+function leafGoal(acc){ const d=!!P['x:leaf_ok'];
+  goalBar('gLeaf', d, d?`<b>Модель сдала экзамен!</b> Точность 80% и выше - потому что учитель (ты) разметил примеры аккуратно.`+(acc!=null&&acc<80?` <small>(в этой попытке ${acc}%)</small>`:''):`<b>Цель:</b> на экзамене модель правильно определит хотя бы 8 из 10 новых листьев (точность 80% и выше).`+(acc!=null?` Сейчас: <b>${acc}%</b>`:''), 30); }
 function lfRender(){
   const st=LF.step; document.querySelectorAll('#lfSteps span').forEach((s,i)=>s.classList.toggle('on',i===st-1));
   const box=$('#lfBody');
   if(st===1){
     const n=LF.train.filter(l=>l.lab).length;
-    box.innerHTML=`<p style="color:var(--dim);font-size:14px;margin-bottom:10px">Ты - агроном и учитель ИИ. Нажимай на листья: первый раз - <b style="color:var(--ok)">здоров</b>, второй - <b style="color:var(--warn)">болен</b>. Смотри на цвет (жёлтый - плохо) и пятна. По этим примерам модель будет учиться.</p>
+    box.innerHTML=`<p style="color:var(--dim);font-size:14px;margin-bottom:10px">Нажимай на листья: первый раз - <b style="color:var(--ok)">здоров</b>, второй - <b style="color:var(--warn)">болен</b>. Смотри на цвет (жёлтый - плохо) и на пятна.</p>
       <div class="leaves" id="lfL">${LF.train.map((l,i)=>leafHTML(l,i,'train')).join('')}</div>
       <div class="row"><button class="ibtn pri" id="lfNext" ${n<LF.train.length?'disabled style="opacity:.5"':''}>Обучить модель →</button><small style="color:var(--dim)">Размечено ${n} из ${LF.train.length}</small><button class="ibtn sm" id="lfNewB">Другие листья</button></div>`;
     box.querySelectorAll('#lfL .leaf').forEach((e,i)=>{ drawLeaf(e.querySelector('canvas'),LF.train[i]); e.onclick=()=>{ const l=LF.train[i]; l.lab=l.lab==='h'?'s':'h'; lfRender(); }; });
     $('#lfNext').onclick=()=>{ if(LF.train.some(l=>!l.lab)) return; LF.step=2; lfRender(); };
-    $('#lfNewB').onclick=lfNew;
+    $('#lfNewB').onclick=lfNew; leafGoal(null);
   } else if(st===2){
     box.innerHTML=`<div class="lf2"><div><canvas class="scat" id="lfS" width="360" height="270"></canvas></div><div>
-      <b>Что "видит" модель</b><p style="font-size:14px;color:var(--dim);margin-top:6px">Каждый лист для компьютера - это точка с двумя числами: <b>зелёность</b> (вправо) и <b>пятнистость</b> (вверх). Твоя разметка раскрасила точки.</p>
-      <p style="font-size:14px;color:var(--dim);margin-top:6px">Модель "k ближайших соседей" делит поле на зоны: новый лист получит ответ большинства из 3 самых похожих примеров. Зелёная зона - "здоров", оранжевая - "болен".</p>
+      <b>Что "видит" модель</b><p style="font-size:14px;color:var(--dim);margin-top:6px">Для компьютера каждый лист - точка с двумя числами: <b>зелёность</b> (вправо) и <b>пятнистость</b> (вверх). Цвет точки - твоя разметка.</p>
+      <p style="font-size:14px;color:var(--dim);margin-top:6px">Модель делит картинку на зоны: новый лист получит ответ большинства из 3 самых похожих примеров. Зелёная зона - "здоров", оранжевая - "болен".</p>
       <div class="row"><button class="ibtn pri" id="lfExam">Экзамен на новых листьях →</button><button class="ibtn sm" id="lfBack">← К разметке</button></div></div></div>`;
     lfScatter($('#lfS')); $('#lfExam').onclick=()=>{ LF.step=3; lfRender(); }; $('#lfBack').onclick=()=>{ LF.step=1; lfRender(); };
   } else {
@@ -1845,10 +1935,11 @@ function lfRender(){
     const acc=Math.round(LF.test.filter(l=>l.pred===l.sick).length/LF.test.length*100), agree=LF.train.filter(l=>(l.lab==='s')===l.sick).length;
     box.innerHTML=`<div class="lf3"><div><div class="leaves">${LF.test.map((l,i)=>leafHTML(l,i,'test')).join('')}</div></div>
       <div><small style="color:var(--dim);font-weight:800">ТОЧНОСТЬ НА НОВЫХ ЛИСТЬЯХ</small><div class="acc" style="color:${acc>=80?'var(--ok)':acc>=60?'var(--warn)':'var(--bad)'}">${acc}%</div>
-      <p style="font-size:14px;color:var(--dim)">Твоя разметка совпала с мнением агронома в ${agree} из ${LF.train.length} случаев. ${LF.spoiled?'<b>Ты специально испортил разметку</b> - видишь, как упала точность? Плохие данные = глупая модель. Это главное правило ИИ.':acc>=80?'Отличная модель! Точность высокая, потому что учитель (ты) разметил примеры аккуратно.':'Модель ошибается. Обычно причина в разметке или в том, что примеров мало и они похожи.'}</p>
-      <div class="row"><button class="ibtn sm" id="lfSpoil">🧪 Эксперимент: испорти разметку</button><button class="ibtn pri sm" id="lfAgain">Начать заново</button></div></div></div>`;
+      <p style="font-size:14px;color:var(--dim)">Твоя разметка совпала с мнением агронома в ${agree} из ${LF.train.length} случаев. ${LF.spoiled?'<b>Ты специально испортил разметку</b> - видишь, как упала точность? Плохие данные = глупая модель. Это главное правило ИИ.':acc>=80?'Отличная модель!':'Модель часто ошибается. Начни заново и размечай внимательнее: жёлтые листья с пятнами - больные.'}</p>
+      <div class="row"><button class="ibtn pri sm" id="lfAgain">Начать заново</button><button class="ibtn sm" id="lfSpoil">🧪 Опыт: испорти разметку</button></div></div></div>`;
     box.querySelectorAll('.leaf').forEach((e,i)=>drawLeaf(e.querySelector('canvas'),LF.test[i]));
-    questHit('leaf'); if(acc>=80&&!LF.spoiled&&addXP('leaf_ok',30)) toast('🍃 Модель сдала экзамен! +30 XP');
+    questHit('leaf'); if(acc>=80&&!LF.spoiled&&addXP('leaf_ok',30)){ toast('🍃 Модель сдала экзамен! +30 XP'); labRoute(); }
+    leafGoal(acc);
     $('#lfSpoil').onclick=()=>{ LF.spoiled=true; shuf(LF.train.map((_,i)=>i)).slice(0,5).forEach(i=>LF.train[i].lab=LF.train[i].lab==='s'?'h':'s'); lfRender(); };
     $('#lfAgain').onclick=lfNew;
   }
@@ -1863,13 +1954,13 @@ function lfScatter(cv){
 }
 
 /* --- 3. свёртка --- */
-const KERN={ 'Оригинал':{k:[0,0,0,0,1,0,0,0,0],d:1,t:'Ядро с единицей в центре ничего не меняет - пиксель равен сам себе.'},
+const KERN={ 'Оригинал':{k:[0,0,0,0,1,0,0,0,0],d:1,t:'Единица в центре ничего не меняет - пиксель равен сам себе. С этого начинают.'},
   'Размытие':{k:[1,1,1,1,1,1,1,1,1],d:9,t:'Среднее из 9 соседей: мелкие детали и шум сглаживаются. Так убирают "зерно" на снимке.'},
   'Контуры':{k:[-1,-1,-1,-1,8,-1,-1,-1,-1],d:1,t:'Пиксель сравнивается с соседями. Где яркость резко меняется - край. Так ИИ находит границы пятен и рядков.',abs:1},
   'Резкость':{k:[0,-1,0,-1,5,-1,0,-1,0],d:1,t:'Центр усиливается, соседи вычитаются - картинка становится чётче.'},
-  'Вертикальные края':{k:[-1,0,1,-2,0,2,-1,0,1],d:1,t:'Фильтр Собеля: реагирует на перепады слева направо. Хорошо видны рядки посевов.',abs:1},
-  'Горизонтальные края':{k:[-1,-2,-1,0,0,0,1,2,1],d:1,t:'Тот же Собель, но повёрнутый: ищет перепады сверху вниз.',abs:1}};
-let CV={img:null,k:'Контуры',cur:null,ker:null};
+  'Вертикальные края':{k:[-1,0,1,-2,0,2,-1,0,1],d:1,t:'Реагирует на перепады слева направо. Хорошо видны наклонные рядки посевов.',abs:1},
+  'Горизонтальные края':{k:[-1,-2,-1,0,0,0,1,2,1],d:1,t:'Тот же фильтр, но повёрнутый: ищет перепады сверху вниз.',abs:1}};
+let CV={img:null,k:'Оригинал',cur:null,ker:null,tried:new Set()};
 function cvMake(){ const W=96,H=72, a=new Float32Array(W*H); const sp=[...Array(3)].map(()=>({x:rnd(15,80),y:rnd(12,60),r:rnd(6,12)})), rd=rnd(20,50);
   for(let y=0;y<H;y++) for(let x=0;x<W;x++){ let v=150+28*Math.sin((x+y*.35)*.8);
     sp.forEach(s=>{ const d=Math.hypot(x-s.x,(y-s.y)*1.2); if(d<s.r) v=70+d*3; });
@@ -1883,18 +1974,22 @@ function cvPut(cv,a,hl){ const c=cv.getContext('2d'), im=c.createImageData(96,72
   if(hl){ c.strokeStyle='#f59e0b'; c.lineWidth=1; c.strokeRect(hl.x-1.5,hl.y-1.5,3,3); } }
 let CVout=null;
 function cvDraw(){ CVout=cvApply(); cvPut($('#cvA'),CV.img,CV.cur); cvPut($('#cvB'),CVout,CV.cur); $('#cvBl').textContent='После фильтра "'+CV.k+'"'; cvExplain(); }
+function cvGoal(){ const n=CV.tried.size, d=!!P['x:conv'];
+  goalBar('gConv', d, d?'<b>Цель выполнена!</b> Ты увидел, как фильтры выделяют на снимке края и пятна. Так работают первые слои нейросети, которая ищет болезни на фото.':`<b>Цель:</b> попробуй 3 разных фильтра. Опробовано: <b>${Math.min(n,3)} из 3</b>`, 10); }
+function cvTry(name){ CV.tried.add(name); questHit('conv'); if(CV.tried.size>=3&&addXP('conv',10)){ toast('🔍 Фильтры освоены! +10 XP'); labRoute(); } cvGoal(); }
 function cvKernel(name){ CV.k=name; CV.ker=JSON.parse(JSON.stringify(KERN[name]));
-  $('#cvK').innerHTML=Object.keys(KERN).map(n=>`<button class="chip ${n===name?'on':''}" data-k="${n}">${n}</button>`).join('')+(name==='Свой'?'<button class="chip on">Свой</button>':'');
-  $('#cvK').querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{ cvKernel(b.dataset.k); questHit('conv'); addXP('conv',10); });
-  $('#cvG').innerHTML=CV.ker.k.map((v,i)=>`<input value="${v}" data-i="${i}" inputmode="numeric">`).join('');
-  $('#cvG').querySelectorAll('input').forEach(inp=>inp.oninput=()=>{ const v=parseFloat(inp.value.replace(',','.')); if(isNaN(v)) return; CV.ker.k[+inp.dataset.i]=v; CV.ker.d=1; CV.ker.abs=1; CV.k='Свой'; $('#cvD').textContent='Ты собрал свой фильтр! Результат берём по модулю, чтобы отрицательные числа тоже было видно.'; cvDraw(); questHit('conv'); addXP('conv',10); });
+  $('#cvK').innerHTML=Object.keys(KERN).map(n=>`<button class="chip ${n===name?'on':''}" data-k="${n}">${CV.tried.has(n)?'✓ ':''}${n}</button>`).join('');
+  $('#cvK').querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{ cvTry(b.dataset.k); cvKernel(b.dataset.k); });
+  $('#cvG').innerHTML=CV.ker.k.map((v,i)=>`<input value="${v}" data-i="${i}" inputmode="numeric" aria-label="Число фильтра ${i+1}">`).join('');
+  $('#cvG').querySelectorAll('input').forEach(inp=>inp.oninput=()=>{ const v=parseFloat(inp.value.replace(',','.')); if(isNaN(v)) return; CV.ker.k[+inp.dataset.i]=v; CV.ker.d=1; CV.ker.abs=1; CV.k='Свой';
+    $('#cvK').querySelectorAll('.chip').forEach(c=>c.classList.remove('on')); $('#cvD').textContent='Ты собрал свой фильтр! Результат берём по модулю, чтобы отрицательные числа тоже было видно.'; cvDraw(); cvTry('Свой'); });
   $('#cvD').textContent=CV.ker.t+(CV.ker.d>1?` Сумма делится на ${CV.ker.d}.`:''); cvDraw(); }
 function cvExplain(){ const p=CV.cur; if(!p){ $('#cvM').innerHTML=''; return; } const W=96,H=72, vals=[], K=CV.ker;
   for(let j=-1;j<=1;j++) for(let i=-1;i<=1;i++){ const xx=Math.min(W-1,Math.max(0,p.x+i)), yy=Math.min(H-1,Math.max(0,p.y+j)); vals.push(Math.round(CV.img[yy*W+xx])); }
   $('#cvM').innerHTML=vals.map(v=>`<span style="background:rgb(${v*.85|0},${v},${v*.8|0});${v>150?'color:#0b1a10':''}">${v}</span>`).join('');
   const terms=vals.map((v,i)=>K.k[i]?`${v}×${K.k[i]}`:'').filter(Boolean), sum=vals.reduce((a,v,i)=>a+v*K.k[i],0);
   $('#cvF').innerHTML=`(${terms.join(' + ')||'0'})${K.d>1?' ÷ '+K.d:''} = ${f2(sum/(K.d||1))}${K.abs?' → по модулю':''} → <b>${Math.round(Math.max(0,Math.min(255,K.abs?Math.abs(sum/(K.d||1)):sum/(K.d||1))))}</b> (яркость нового пикселя${!K.abs&&(sum<0||sum/(K.d||1)>255)?', обрезаем до 0-255':''})`; }
-function cvInit(){ cvMake(); cvKernel('Контуры');
+function cvInit(){ cvMake(); cvKernel('Оригинал'); cvGoal();
   const mv=e=>{ const cv=e.currentTarget, r=cv.getBoundingClientRect(), t=e.touches?e.touches[0]:e; const x=Math.floor((t.clientX-r.left)/r.width*96), y=Math.floor((t.clientY-r.top)/r.height*72);
     if(x<0||y<0||x>95||y>71) return; CV.cur={x,y}; cvPut($('#cvA'),CV.img,CV.cur); cvPut($('#cvB'),CVout,CV.cur); cvExplain(); };
   ['cvA','cvB'].forEach(id=>{ const c=$('#'+id); c.onmousemove=mv; c.ontouchmove=e=>{ e.preventDefault(); mv(e); }; c.ontouchstart=mv; });
@@ -1902,26 +1997,27 @@ function cvInit(){ cvMake(); cvKernel('Контуры');
 
 /* --- 4. камера --- */
 let CAM={st:null, face:'environment', mask:true, raf:0, t0:0};
+function camGoal(){ const d=!!P['x:cam']; goalBar('gCam', d, d?'<b>Агросканер работает!</b> Программа сама нашла зелёные пиксели на живом видео.':'<b>Цель:</b> включи камеру и подержи её на растении 3 секунды.', 15); }
 async function camStart(){
-  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){ $('#camPh').textContent='Этот браузер не даёт доступ к камере. Попробуй открыть сайт с телефона в Chrome или Яндекс Браузере.'; return; }
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){ $('#camPh').textContent='Этот браузер не даёт доступ к камере. Попробуй открыть сайт с телефона в Chrome или Яндекс Браузере. Или просто переходи к опыту 5.'; return; }
   camStop();
   try{ CAM.st=await navigator.mediaDevices.getUserMedia({video:{facingMode:CAM.face,width:{ideal:640},height:{ideal:480}},audio:false}); }
-  catch(e){ $('#camPh').textContent='Камера недоступна: разреши доступ к камере в настройках браузера и нажми кнопку ещё раз.'; return; }
+  catch(e){ $('#camPh').textContent='Камера недоступна. Разреши доступ к камере в настройках браузера и нажми кнопку ещё раз - или переходи к опыту 5.'; return; }
   const v=$('#camV'); v.srcObject=CAM.st; await v.play().catch(()=>{});
   $('#camPh').style.display='none'; $('#camC').style.display='block'; $('#camFlip').hidden=false; $('#camMask').hidden=false; $('#camOn').textContent='Выключить камеру'; CAM.t0=Date.now();
   const c=$('#camC').getContext('2d',{willReadFrequently:true}); let last=0;
   const loop=ts=>{ CAM.raf=requestAnimationFrame(loop); if(ts-last<90||!v.videoWidth) return; last=ts;
-    c.drawImage(v,0,0,320,240); const im=c.getImageData(0,0,320,240), d=im.data, thr=+$('#camT').value; let g=0;
+    c.drawImage(v,0,0,320,240); const im=c.getImageData(0,0,320,240), d=im.data, thr=+$('#camThr').value; let g=0;
     for(let i=0;i<d.length;i+=4){ const ex=2*d[i+1]-d[i]-d[i+2]; if(ex>thr){ g++; if(CAM.mask){ d[i+1]=Math.min(255,d[i+1]+60); d[i]*=.6; d[i+2]*=.6; } } else if(CAM.mask){ d[i]*=.35; d[i+1]*=.35; d[i+2]*=.35; } }
     if(CAM.mask) c.putImageData(im,0,0);
     const pc=Math.round(g/(320*240)*100); $('#camG').textContent=pc+'%'; $('#camO').textContent=(100-pc)+'%';
-    if(Date.now()-CAM.t0>2500 && addXP('cam',15)) toast('📷 Агросканер работает! +15 XP'); };
+    if(Date.now()-CAM.t0>3000 && addXP('cam',15)){ toast('📷 Агросканер работает! +15 XP'); camGoal(); labRoute(); } };
   CAM.raf=requestAnimationFrame(loop);
 }
 function camStop(){ cancelAnimationFrame(CAM.raf); if(CAM.st){ CAM.st.getTracks().forEach(t=>t.stop()); CAM.st=null; }
   const ph=document.getElementById('camPh'); if(ph){ ph.style.display=''; $('#camC').style.display='none'; $('#camOn').textContent='Включить камеру'; } }
 
-/* --- 5-6. ИИ в агро и словарь --- */
+/* --- 5. словарь и проверка; ИИ в агро --- */
 const AIAG=[
   {e:'🌱', t:'Точечное опрыскивание', d:'Камера на опрыскивателе отличает сорняк от культуры и брызгает только на сорняк. Химии нужно намного меньше.', g:'#15803d,#65a30d'},
   {e:'🛰', t:'Мониторинг со спутника', d:'По снимкам считают индекс NDVI и видят, где посевы отстают, раньше, чем это заметно глазом.', g:'#1d4ed8,#0ea5e9'},
@@ -1932,31 +2028,53 @@ const AIAG=[
   {e:'🐄', t:'Умная ферма', d:'Камеры и датчики следят за животными и сообщают, если корова мало ест или хромает.', g:'#9333ea,#db2777'}
 ];
 const DICT=[
-  {e:'🗃', t:'Датасет', s:'набор примеров', g:'#0f766e,#14b8a6', b:'Набор примеров для обучения. Например, 1000 фото листьев с подписями "здоров" или "болен".', x:'В нашей лаборатории датасет - 12 листьев, которые ты разметил.'},
-  {e:'🏷', t:'Разметка', s:'подписи к данным', g:'#1d4ed8,#0ea5e9', b:'Подписи к примерам. Их делает человек, и от их качества зависит, насколько умной будет модель.', x:'Ошибка в разметке = ошибка в модели.'},
-  {e:'🧩', t:'Модель', s:'обученная программа', g:'#7c3aed,#6366f1', b:'Программа, которая нашла закономерности в данных и умеет применять их к новым случаям.', x:'Модель "k соседей" ищет самые похожие примеры.'},
-  {e:'⚖', t:'Вес', s:'важность признака', g:'#ca8a04,#f97316', b:'Число, которое показывает, насколько признак влияет на решение. Отрицательный вес - признак "против".', x:'У влажности почвы вес отрицательный: мокро - не поливаем.'},
-  {e:'🧠', t:'Нейрон', s:'кирпичик нейросети', g:'#be123c,#f97316', b:'Считает взвешенную сумму входов и решает "да" или "нет". В нейросети миллионы нейронов, соединённых слоями.', x:'Σ = w1·x1 + w2·x2 + b'},
-  {e:'🏋', t:'Обучение', s:'подбор весов', g:'#16a34a,#0d9488', b:'Процесс, в котором модель смотрит на свои ошибки и чуть-чуть меняет веса, чтобы ошибаться меньше.', x:'Кнопка "Обучить автоматически" делает именно это.'},
-  {e:'📏', t:'Точность', s:'доля верных ответов', g:'#0891b2,#2563eb', b:'Сколько ответов модели верны на новых данных, которые она не видела при обучении.', x:'9 верных из 10 = 90%.'},
-  {e:'🦜', t:'Переобучение', s:'зубрёжка вместо понимания', g:'#9333ea,#db2777', b:'Модель запомнила обучающие примеры, но плохо работает на новых. Поэтому её проверяют отдельным "экзаменом".', x:'Как выучить ответы к билетам, не поняв тему.'},
-  {e:'🔍', t:'Свёртка', s:'фильтр по окну 3×3', g:'#334155,#0ea5e9', b:'Операция, при которой маленькое окно скользит по картинке и пересчитывает каждый пиксель. Так нейросеть находит края и формы.', x:'Попробуй фильтры в разделе 3.'},
-  {e:'💬', t:'Промпт', s:'запрос к нейросети', g:'#c2410c,#eab308', b:'Текст, которым ты ставишь задачу языковой модели. Чем точнее промпт, тем полезнее ответ.', x:'Роль + задача + контекст + формат + ограничения.'}
+  {e:'🗃', t:'Датасет', s:'набор примеров', b:'Набор примеров для обучения. Например, 1000 фото листьев с подписями "здоров" или "болен".', x:'В опыте 2 датасет - это 12 листьев, которые ты разметил.', q:'Набор примеров, на которых учится модель: например, 1000 фото листьев.'},
+  {e:'🏷', t:'Разметка', s:'подписи к данным', b:'Подписи к примерам. Их делает человек, и от их качества зависит, насколько умной будет модель.', x:'Ошибка в разметке = ошибка в модели.', q:'Подписи "здоров" или "болен", которые человек ставит к примерам.'},
+  {e:'🧩', t:'Модель', s:'обученная программа', b:'Программа, которая нашла закономерности в данных и умеет применять их к новым случаям.', x:'Модель "3 ближайших соседа" из опыта 2 ищет самые похожие примеры.', q:'Программа, которая нашла закономерности в данных и применяет их к новым случаям.'},
+  {e:'⚖', t:'Вес', s:'важность признака', b:'Число, которое показывает, насколько признак влияет на решение. Отрицательный вес - признак "против".', x:'У влажности почвы вес отрицательный: мокро - не поливаем.', q:'Число, которое показывает, насколько признак влияет на решение, и в какую сторону.'},
+  {e:'🧠', t:'Нейрон', s:'кирпичик нейросети', b:'Умножает входы на веса, складывает и решает "да" или "нет". В нейросети миллионы таких кирпичиков.', x:'Σ = вес × влажность + смещение', q:'Самая маленькая часть нейросети: складывает входы, умноженные на веса, и отвечает "да" или "нет".'},
+  {e:'🏋', t:'Обучение', s:'подбор весов', b:'Модель смотрит на свои ошибки и чуть-чуть меняет веса, чтобы ошибаться меньше.', x:'Кнопка "Пусть учится сам" в опыте 1 делает именно это.', q:'Процесс, в котором модель смотрит на свои ошибки и понемногу меняет веса.'},
+  {e:'📏', t:'Точность', s:'доля верных ответов', b:'Сколько ответов модели верны на новых данных, которые она не видела при обучении.', x:'9 верных из 10 = 90%.', q:'Доля верных ответов модели на новых данных. Например, 9 из 10 = 90%.'},
+  {e:'🦜', t:'Переобучение', s:'зубрёжка вместо понимания', b:'Модель запомнила обучающие примеры, но плохо работает на новых. Поэтому её проверяют отдельным "экзаменом".', x:'Как выучить ответы к билетам, не поняв тему.', q:'Модель вызубрила обучающие примеры, а на новых ошибается.'},
+  {e:'🔍', t:'Свёртка', s:'фильтр по окну 3 на 3', b:'Маленькое окно скользит по картинке и пересчитывает каждый пиксель. Так нейросеть находит края и формы.', x:'Фильтры из опыта 3 - это свёртки.', q:'Окно 3 на 3 скользит по картинке и пересчитывает каждый пиксель, чтобы найти края.'},
+  {e:'💬', t:'Промпт', s:'запрос к нейросети', b:'Текст, которым ты ставишь задачу языковой модели. Чем точнее промпт, тем полезнее ответ.', x:'Роль + задача + контекст + формат + ограничения.', q:'Текст, которым ставят задачу языковой модели, например чат-боту.'}
 ];
+let DQ=null;
+function dictGoal(){ const d=!!P['x:dictq']; goalBar('gDict', d, d?'<b>Проверка пройдена!</b> Ты знаешь главные слова языка ИИ.':'<b>Цель:</b> ответь верно хотя бы на 4 вопроса из 5.', 20); }
+function dqStart(){ const idx=shuf(DICT.map((_,i)=>i)).slice(0,5);
+  DQ={qs:idx.map(i=>({i, o:shuf([i,...shuf(DICT.map((_,j)=>j).filter(j=>j!==i)).slice(0,2)])})), k:0, res:[]}; dqRender(); }
+function dqRender(){
+  const box=$('#dictQ');
+  if(!DQ){ box.innerHTML=`<div class="dq-start"><div><b style="font:700 16px Unbounded,sans-serif">Проверка: 5 вопросов</b><p style="color:var(--dim);font-size:14px;margin-top:4px">Читаешь описание - выбираешь подходящее слово. Можно подглядывать в карточки выше.</p></div><button class="ibtn pri" id="dqGo">Начать проверку</button></div>`; $('#dqGo').onclick=dqStart; return; }
+  const dots=`<div class="dots">${DQ.qs.map((_,k)=>`<i class="${k<DQ.res.length?(DQ.res[k]?'ok':'no'):k===DQ.k?'cur':''}"></i>`).join('')}</div>`;
+  if(DQ.k>=DQ.qs.length){ const sc=DQ.res.filter(Boolean).length, ok=sc>=4;
+    if(ok){ questHit('dict'); if(addXP('dictq',20)){ toast('📖 Проверка словаря пройдена! +20 XP'); labRoute(); } }
+    box.innerHTML=`<div class="fin"><div class="sc" style="color:${ok?'var(--ok)':'var(--warn)'}">${sc} / 5</div><p>${ok?'Отлично! Ты знаешь язык ИИ.':'Почти! Перечитай карточки выше и попробуй ещё раз - вопросы будут другие.'}</p><button class="ibtn ${ok?'':'pri'}" id="dqGo">Пройти ещё раз</button></div>`;
+    $('#dqGo').onclick=dqStart; dictGoal(); return; }
+  const Q=DQ.qs[DQ.k], D=DICT[Q.i];
+  box.innerHTML=`<div class="qtop"><b>Вопрос ${DQ.k+1} из 5</b>${dots}</div><div class="qq">Какое слово подходит к описанию?</div><p class="dq-def">${esc(D.q)}</p>
+    <div class="qo">${Q.o.map(j=>`<button data-j="${j}">${DICT[j].e} ${esc(DICT[j].t)}</button>`).join('')}</div><div id="dqE"></div>`;
+  box.querySelectorAll('.qo button').forEach(b=>b.onclick=()=>{ const ok=+b.dataset.j===Q.i; DQ.res.push(ok);
+    box.querySelectorAll('.qo button').forEach(x=>{ x.disabled=true; if(+x.dataset.j===Q.i) x.classList.add('right'); }); if(!ok) b.classList.add('wrong');
+    $('#dqE').innerHTML=`<div class="qe"><b>${ok?'✅ Верно!':'❌ Не совсем.'}</b> ${esc(D.t)} - ${esc(D.b)}<div class="row" style="margin-bottom:0"><button class="ibtn pri sm" id="dqNext">${DQ.k+1<DQ.qs.length?'Следующий вопрос →':'Результат'}</button></div></div>`;
+    $('#dqNext').onclick=()=>{ DQ.k++; dqRender(); }; });
+}
+
 let labInit=false;
 function initLab(){
   if(labInit) return; labInit=true;
-  nRender(); $('#nTrain').onclick=nAuto; $('#nStep').onclick=()=>{ if(!nTimer) nStep(); }; $('#nReset').onclick=()=>{ if(nTimer) nAuto(); NW={w1:0,w2:0,w3:0,b:0}; nIdx=0; nSel=0; nRender(); };
-  lfNew(); cvInit();
-  $('#camT').oninput=()=>$('#camTv').textContent=$('#camT').value; $('#camTv').textContent=$('#camT').value;
+  if(P['x:neu_1']) nLvl=2;
+  nRender(); $('#nTrain').onclick=nAuto; $('#nReset').onclick=()=>{ if(nTimer) nAuto(); NW={w1:0,w2:0,b:0}; nIdx=0; nSel=0; nRender(); };
+  lfNew(); cvInit(); camGoal();
+  $('#camThr').oninput=()=>$('#camTv').textContent=$('#camThr').value; $('#camTv').textContent=$('#camThr').value;
   $('#camOn').onclick=()=>CAM.st?camStop():camStart();
   $('#camFlip').onclick=()=>{ CAM.face=CAM.face==='environment'?'user':'environment'; camStart(); };
-  $('#camMask').onclick=()=>{ CAM.mask=!CAM.mask; $('#camMask').textContent='Карта зон: '+(CAM.mask?'вкл':'выкл'); };
+  $('#camMask').onclick=()=>{ CAM.mask=!CAM.mask; $('#camMask').textContent='Подсветка: '+(CAM.mask?'вкл':'выкл'); };
   $('#aiag').innerHTML=AIAG.map(a=>`<div style="background:linear-gradient(135deg,${a.g})"><span class="e">${a.e}</span><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
-  $('#dict').innerHTML=DICT.map((f,i)=>`<div class="flip" data-i="${i}"><div class="fi"><div class="ff" style="background:linear-gradient(135deg,${f.g})"><span class="e">${f.e}</span><div><h4>${f.t}</h4><small>${f.s}</small></div><small style="opacity:.75">нажми, чтобы перевернуть ↻</small></div>
-    <div class="fb"><b>${f.t}</b><span>${f.b}</span><small style="color:var(--dim)">${f.x}</small></div></div></div>`).join('');
-  document.querySelectorAll('#dict .flip').forEach(e=>e.onclick=ev=>{ e.classList.toggle('on'); if(e.classList.contains('on')) addXP('dict'+e.dataset.i,2,ev); });
-  reveal('#aiag>div'); reveal('#dict .flip');
+  $('#dict').innerHTML=DICT.map((f,i)=>`<button class="dterm" data-i="${i}" aria-expanded="false"><span class="de">${f.e}</span><span><b>${esc(f.t)}</b><small>${esc(f.s)}</small></span><span class="dmore">${esc(f.b)}<em>${esc(f.x)}</em></span></button>`).join('');
+  document.querySelectorAll('#dict .dterm').forEach(e=>e.onclick=ev=>{ const o=e.classList.toggle('open'); e.setAttribute('aria-expanded',o); if(o) addXP('dict'+e.dataset.i,2,ev); });
+  dqRender(); dictGoal(); labRoute();
+  reveal('#aiag>div');
   initPoll('#pollBest');
 }
 
