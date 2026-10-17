@@ -2383,5 +2383,6 @@ const h=location.hash.slice(1);
 if(['py','ai','lab','lib','top'].includes(h)){ show(h); if(h==='py') initPy(); if(h==='ai') initAI(); onView(h); }
 else if(MODULES.some(m=>m.id===h)){ curMod=MODULES.find(m=>m.id===h); curTab=curMod.lessons.length?'lessons':'prac'; renderMod(); show('mod'); }
 </script>
+<script src="/oshibka.js" data-site="agro" defer></script>
 </body>
 </html>
