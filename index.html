@@ -1047,7 +1047,7 @@ addEventListener('pageshow',()=>document.querySelectorAll('.diveov').forEach(o=>
 (function(){ let f=null; try{ f=sessionStorage.getItem('dive'); sessionStorage.removeItem('dive'); }catch(_){} if(!f) return;
   const o=document.createElement('div'); o.className='diveov on'; o.style.setProperty('--x','50%'); o.style.setProperty('--y','50%'); o.style.transition='none'; document.body.appendChild(o);
   requestAnimationFrame(()=>requestAnimationFrame(()=>{ o.style.transition=''; o.classList.remove('on'); setTimeout(()=>o.remove(),800); })); })();
-const API='https://script.google.com/macros/s/AKfycbwmh9Ksw7lm9pYZCy3ao-mvZ5ogKbFM7E66zJIAa5ZvorA6q7FLH8ZlFZvFK9RKHRM-/exec';  // сервер: счётчик и опросы
+const API='https://functions.yandexcloud.net/d4e4vhndceg7scc0mh3b';  // сервер: счётчик и опросы
 const LS='agro_progress_v2';
 let P={}; try{ P=JSON.parse(localStorage.getItem(LS)||'{}'); }catch(e){}
 const saveP=()=>{ try{ localStorage.setItem(LS,JSON.stringify(P)); }catch(e){} if(typeof renderXP==='function') renderXP(); };
