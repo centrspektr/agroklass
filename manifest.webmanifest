@@ -1,7 +1,7 @@
 {
   "name": "Агрокласс",
   "short_name": "Агрокласс",
-  "description": "Дроны, Python и ИИ в агросфере: курс, лаборатории, библиотека промптов и рейтинг класса",
+  "description": "Агродроны ARA EDU: курс из 10 модулей - сборка, полёт, датчики, DroneCam, Python, техническое зрение и ИИ, итоговый агропроект, рейтинг класса",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -9,13 +9,35 @@
   "theme_color": "#16a34a",
   "lang": "ru",
   "icons": [
-    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
-    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
-    {"src": "maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ],
   "shortcuts": [
-    {"name": "ИИ-лаборатория", "url": "./#lab"},
-    {"name": "Библиотека промптов", "url": "./#lib"},
-    {"name": "Рейтинг", "url": "./#top"}
+    {
+      "name": "Курс",
+      "url": "./#home"
+    },
+    {
+      "name": "ИИ-лаборатория",
+      "url": "./#lab"
+    },
+    {
+      "name": "Рейтинг",
+      "url": "./#top"
+    }
   ]
 }
