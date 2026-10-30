@@ -20,4 +20,6 @@ jobs:
         env:
           GV_USER: ${{ secrets.GITVERSE_USER }}
           GV_TOKEN: ${{ secrets.GITVERSE_TOKEN }}
-        run: git push --force "https://${GV_USER}:${GV_TOKEN}@gitverse.ru/centrspektr/agroklass.git" HEAD:refs/heads/main
+        run: |
+          echo "Длина логина: ${#GV_USER}, длина токена: ${#GV_TOKEN}"
+          git push --force "https://${GV_USER}:${GV_TOKEN}@gitverse.ru/centrspektr/agroklass.git" HEAD:refs/heads/main
