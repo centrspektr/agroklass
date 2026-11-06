@@ -1096,7 +1096,14 @@ const LS='agro_progress_v2';
 const LOCKS={py:true, ai:true, lab:true, lib:true};
 const LOCK_NAMES={py:'Python', ai:'Промпты', lab:'ИИ-лаборатория', lib:'Библиотека промптов'};
 const devOpen=v=>{ try{ return localStorage.getItem('agro_open_'+v)==='1'; }catch(e){ return false; } };
-function isLocked(v){ if(!v||!LOCKS[v]) return false; try{ if(TT) return false; }catch(e){} return !devOpen(v); }
+/* "Для всех": педагог открывает/закрывает раздел всем ученикам из кабинета (PIN). Хранится на сервере (op agrolocks / agrolock),
+   последнее известное значение - в localStorage. Нет связи или сервер ещё не умеет - работает как раньше (LOCKS выше). */
+let GLOCKS={}; try{ const g=JSON.parse(localStorage.getItem('agro_glocks')||'{}'); if(g&&typeof g==='object') GLOCKS=g; }catch(e){}
+const lockOn=v=>(v in LOCKS)?(typeof GLOCKS[v]==='boolean'?GLOCKS[v]:LOCKS[v]):false;
+function setGlocks(g){ if(!g||typeof g!=='object') return false; const n={}; for(const k in LOCKS) if(typeof g[k]==='boolean') n[k]=g[k];
+  const ch=JSON.stringify(n)!==JSON.stringify(GLOCKS); GLOCKS=n; try{ localStorage.setItem('agro_glocks',JSON.stringify(n)); }catch(e){} return ch; }
+let LOCKV=null;
+function isLocked(v){ if(!v||!lockOn(v)) return false; try{ if(TT) return false; }catch(e){} return !devOpen(v); }
 let P={}; try{ P=JSON.parse(localStorage.getItem(LS)||'{}'); }catch(e){}
 const saveP=()=>{ try{ localStorage.setItem(LS,JSON.stringify(P)); }catch(e){} if(typeof renderXP==='function') renderXP(); };
 const lk=(m,i)=>`${m}:${i}`;
@@ -1121,7 +1128,7 @@ document.addEventListener('click',()=>document.querySelectorAll('.fsel.open').fo
 /* ---------- навигация ---------- */
 const vt=fn=>document.startViewTransition&&!matchMedia('(prefers-reduced-motion: reduce)').matches?document.startViewTransition(fn):fn();
 function show(v){ let tab=v; if(isLocked(v)){ lockScreen(v); v='lock'; } document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===(tab==='mod'?'home':tab))); show0(v); }
-function lockScreen(v){ $('#lockBody').innerHTML=`<div class="card lockc"><div class="lki">${ic('lock',56)}</div><h1>Раздел "${esc(LOCK_NAMES[v])}" пока закрыт</h1>
+function lockScreen(v){ LOCKV=v; $('#lockBody').innerHTML=`<div class="card lockc"><div class="lki">${ic('lock',56)}</div><h1>Раздел "${esc(LOCK_NAMES[v])}" пока закрыт</h1>
     <p>Его откроет педагог, когда класс дойдёт до этой темы. А пока - основной курс: видеоуроки, практика, тренажёры и тесты.</p><button class="ibtn pri" id="lkHome">К модулям курса →</button></div>`;
   $('#lkHome').onclick=()=>vt(()=>{ show('home'); renderHome(); onView('home'); try{history.replaceState(null,'','#home')}catch(e){} }); }
 function lockNav(){ document.querySelectorAll('#nav button').forEach(b=>{ const v=b.dataset.v; if(!(v in LOCKS)) return; const l=isLocked(v); b.classList.toggle('lk',l); let s=b.querySelector('.lkm'); if(l&&!s){ s=document.createElement('span'); s.className='lkm'; s.innerHTML=ic('lock',13); b.appendChild(s); } if(!l&&s) s.remove(); b.title=l?'Раздел закрыт':''; }); }
@@ -2516,10 +2523,17 @@ async function tStat(B){
     <p style="color:var(--dim);font-size:13px;margin-top:8px">Наведите на столбик, чтобы увидеть число. Подробно - во вкладке "Посещения" таблицы.</p>`;
 }
 function tLock(B){
+  const rows=Object.keys(LOCKS).map(v=>{ const on=lockOn(v);
+    return `<tr><td><b>${esc(LOCK_NAMES[v])}</b></td><td><button class="ibtn sm${on?'':' pri'}" data-gv="${v}" title="${on?'Открыть раздел всем ученикам':'Снова закрыть раздел для всех'}">${on?'🔒 Закрыт - открыть всем':'🔓 Открыт всем - закрыть'}</button></td><td>${on?`<button class="ibtn sm" data-ov="${v}">${devOpen(v)?'🔓 Открыт - закрыть':'Открыть здесь'}</button>`:'-'}</td></tr>`; }).join('');
   B.innerHTML=`<p style="color:var(--dim);font-size:13px">Основной курс открыт всегда. Эти разделы закрыты замком для учеников. Вы после входа видите всё.</p>
-    <table class="ttab"><tr><th>Раздел</th><th>Для всех учеников</th><th>На этом устройстве</th></tr>${Object.keys(LOCKS).map(v=>`<tr><td><b>${esc(LOCK_NAMES[v])}</b></td><td>${LOCKS[v]?'🔒 закрыт':'🔓 открыт'}</td><td>${LOCKS[v]?`<button class="ibtn sm" data-ov="${v}">${devOpen(v)?'🔓 Открыт - закрыть':'Открыть здесь'}</button>`:'-'}</td></tr>`).join('')}</table>
-    <p style="color:var(--dim);font-size:13px;margin-top:10px">"На этом устройстве" - например, на компьютере в классе: раздел откроется только здесь и останется открытым после выхода. Чтобы открыть раздел сразу всем ученикам, в коде страницы меняется одна строка: <code>LOCKS</code> (true - закрыт, false - открыт).</p>`;
+    <table class="ttab"><tr><th>Раздел</th><th>Для всех учеников</th><th>На этом устройстве</th></tr>${rows}</table>
+    <small id="tLkMsg" style="display:block;margin-top:8px;color:var(--dim)"></small>
+    <p style="color:var(--dim);font-size:13px;margin-top:10px">"Для всех учеников" - раздел откроется у всех: на телефонах и компьютерах учеников он станет доступен при следующем открытии сайта (или в течение минуты, если сайт уже открыт). "На этом устройстве" - например, на компьютере в классе: раздел откроется только здесь и останется открытым после выхода.</p>`;
   B.querySelectorAll('[data-ov]').forEach(b=>b.onclick=()=>{ const v=b.dataset.ov; try{ devOpen(v)?localStorage.removeItem('agro_open_'+v):localStorage.setItem('agro_open_'+v,'1'); }catch(e){} lockNav(); tLock(B); renderStrip(); });
+  B.querySelectorAll('[data-gv]').forEach(b=>b.onclick=async()=>{ const v=b.dataset.gv, want=!lockOn(v), msg=$('#tLkMsg'); b.disabled=true; msg.style.color='var(--dim)'; msg.textContent='Сохраняю…';
+    try{ const j=await tapi({op:'agrolock',sec:v,locked:want}); if(!setGlocks(j.locks||Object.assign({},GLOCKS,{[v]:want}))&&lockOn(v)!==want) throw new Error('Сервер не подтвердил');
+      lockNav(); renderStrip(); tLock(B); toast(want?`🔒 "${LOCK_NAMES[v]}" снова закрыт для всех`:`🔓 "${LOCK_NAMES[v]}" открыт всем ученикам`); }
+    catch(e){ b.disabled=false; msg.style.color='var(--bad)'; msg.textContent='Не получилось: '+e.message+'. Если сервер ещё не обновлён под эту кнопку, пока откройте раздел "На этом устройстве".'; } });
 }
 function tInit(){
   applyT(); $('#tBtn').onclick=()=>TT?tPanel():tLogin();
@@ -2545,6 +2559,12 @@ renderHome(); renderXP(); checkBadges(true); renderStrip(); tInit(); setTimeout(
 if('serviceWorker' in navigator && location.protocol==='https:') navigator.serviceWorker.register('./sw.js').catch(()=>{});
 (function hit(page){ try{ const k='irtysh_hit_'+page; if(sessionStorage.getItem(k)!==null) return; const d=new Date().toDateString(), fresh=!localStorage.getItem('irtysh_new_'+page), today=localStorage.getItem('irtysh_day_'+page)!==d;
   fetch(API,{method:'POST', body:JSON.stringify({op:'hit', page, fresh, today})}).then(r=>r.json()).then(j=>{ if(!j.ok) return; localStorage.setItem('irtysh_new_'+page,'1'); localStorage.setItem('irtysh_day_'+page,d); sessionStorage.setItem(k,String(j.total||'')); }).catch(()=>{}); }catch(e){} })('agroklass');
+/* Замки "для всех" с сервера: при открытии и раз в минуту, пока вкладка видна */
+function loadGlocks(){ fetch(API,{method:'POST',body:JSON.stringify({op:'agrolocks'})}).then(r=>r.json()).then(j=>{ if(!j||!j.ok||!setGlocks(j.locks)) return;
+  lockNav(); try{ renderStrip(); }catch(e){}
+  const lv=document.getElementById('v-lock'); if(LOCKV&&lv&&lv.classList.contains('on')&&!isLocked(LOCKV)){ const v=LOCKV; show(v); if(v==='py') initPy(); if(v==='ai') initAI(); onView(v); }
+  else { const nb=document.querySelector('#nav button.on'), v=nb&&nb.dataset.v; if(v&&isLocked(v)&&!(lv&&lv.classList.contains('on'))) show(v); } }).catch(()=>{}); }
+loadGlocks(); setInterval(()=>{ if(!document.hidden) loadGlocks(); },60000);
 const h=location.hash.slice(1);
 if(['py','ai','lab','lib','top'].includes(h)){ show(h); if(isLocked(h)){} else if(h==='py') initPy(); if(h==='ai') initAI(); onView(h); }
 else if(MODULES.some(m=>m.id===h)){ curMod=MODULES.find(m=>m.id===h); curTab=curMod.lessons.length?'lessons':'prac'; renderMod(); show('mod'); }
