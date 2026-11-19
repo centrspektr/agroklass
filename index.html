@@ -185,6 +185,13 @@ canvas{width:100%; display:block; border-radius:14px; background:#0b1a10}
 #toast{position:fixed; left:50%; bottom:22px; transform:translate(-50%,30px); opacity:0; background:var(--text); color:var(--bg); padding:10px 18px; border-radius:12px; font-weight:700; transition:.3s; z-index:200}
 #toast.on{opacity:1; transform:translate(-50%,0)}
 footer{color:var(--dim); font-size:13px; text-align:center; padding:26px 0 40px}
+/* авторство и условия */
+.authline{font-size:12px; color:var(--dim); margin-top:12px; line-height:1.45}
+.hcard .authline{color:#fff; opacity:.8}
+.tlink{background:none; border:none; padding:0; font:inherit; color:inherit; text-decoration:underline; text-underline-offset:2px; cursor:pointer}
+.tlink:hover{opacity:.75}
+.terms ul{margin:10px 0 0; padding-left:20px} .terms li{margin:7px 0; font-size:14.5px; line-height:1.5}
+.terms .copy{margin-top:16px; font-size:13px; color:var(--dim)}
 @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important} }
 .diveov{position:fixed; inset:0; z-index:9999; pointer-events:none; background:radial-gradient(circle at var(--x) var(--y),#bbf7d0,#16a34a 35%,#064e3b 90%); clip-path:circle(0px at var(--x) var(--y)); transition:clip-path .7s cubic-bezier(.7,0,.25,1)}
 .diveov.on{clip-path:circle(150vmax at var(--x) var(--y))}
@@ -681,6 +688,7 @@ nav.tabsnav button.lk{opacity:.7} nav.tabsnav button .lkm{display:inline-flex; m
           <p>Собираем и настраиваем учебный квадрокоптер ARA EDU, программируем полёты на Python, учим дрон видеть маркеры и пробуем задачи агронома: осмотр поля, поиск проблемных участков, доставка груза.</p>
           <div class="chips"><span class="chip">10 модулей</span><span class="chip" id="hLes"></span><span class="chip">тесты с разбором</span><span class="chip">тренажёры</span><span class="chip">итоговый агропроект</span></div>
           <button class="ibtn" id="contBtn">Продолжить обучение →</button>
+          <div class="authline">Автор курса: Александр Наумов, 2026. <button type="button" class="tlink" data-terms>Условия</button></div>
         </div>
       </div>
       <div class="card">
@@ -947,7 +955,7 @@ nav.tabsnav button.lk{opacity:.7} nav.tabsnav button .lkm{display:inline-flex; m
     <div class="card"><div class="diary" id="diary"></div></div>
   </section>
 </main>
-<footer>Агрокласс · ресурсный центр "СПЕКТР" · учебные материалы: Applied Robotics (ARA EDU, DroneCam)</footer>
+<footer>Агрокласс · ресурсный центр "СПЕКТР" · учебные материалы: Applied Robotics (ARA EDU, DroneCam)<br>Автор курса: Александр Наумов, 2026. <button type="button" class="tlink" data-terms>Условия использования</button></footer>
 
 <div class="modal" id="modal" onclick="if(event.target===this)closeV()"><div class="mcard"><button class="x" onclick="closeV()" aria-label="Закрыть">✕</button><div id="vbody"></div></div></div>
 <div id="toast"></div>
@@ -2499,10 +2507,26 @@ async function tapi(q){ let j; try{ j=await (await fetch(API,{method:'POST',body
   if(!j.ok){ if(j.auth){ TT=null; saveTT(); applyT(); } throw new Error(j.error||'Ошибка сервера'); } return j; }
 function applyT(){ const b=$('#tBtn'); let dev=false; try{ dev=!!localStorage.getItem('agro_tdev'); }catch(e){}
   b.classList.toggle('on',!!TT||dev); b.textContent=TT?'👩‍🏫 '+TT.user.name.split(' ').slice(0,2).join(' '):'🔑 Вход'; lockNav(); }
+/* ---------- условия использования (авторство) ---------- */
+function openTerms(){
+  tModal(`<div class="terms"><h3>Условия использования курса</h3><ul>
+    <li>Курс "Агрокласс" - авторская работа. Автор: Александр Наумов, 2026.</li>
+    <li>Автору принадлежат: устройство курса из 10 модулей и его подача, тексты и пояснения, практические задания, тесты с разбором, задания дня, тренажёры (PID, миссии, нейрон, свёртка, листья и другие), задания по Python и тренажёр Python, ИИ-лаборатория, библиотека промптов, шпаргалки, рисунки и код сайта.</li>
+    <li>Можно: проходить курс, заниматься с педагогом в классе, делиться ссылкой на сайт.</li>
+    <li>Нельзя без письменного разрешения: копировать, переделывать и выкладывать у себя, выдавать за своё и убирать имя автора, продавать курс или доступ к нему.</li>
+    <li>Хотите взять курс для школы или кружка - напишите автору, договоримся.</li>
+    <li>Чужое здесь не присваивается. Видеоуроки на RuTube, методички, Wiki, программы и примеры кода на GitHub принадлежат Applied Robotics и открываются по ссылкам с их сайтов. Наборы ARA EDU, DroneCam, GROM VTOL и их названия - тоже Applied Robotics. Модули курса опираются на программу набора ARA EDU. Сторонних библиотек сайт не подключает.</li>
+    <li>История создания с датами правок хранится в репозитории автора.</li>
+  </ul><p class="copy">© 2026 Александр Наумов. Все права защищены.</p>
+  <div class="row" style="margin-top:14px"><button class="ibtn pri" id="termsOk">Понятно</button></div></div>`);
+  $('#termsOk').onclick=closeV;
+}
+document.addEventListener('click',e=>{ const b=e.target.closest('[data-terms]'); if(b){ e.preventDefault(); openTerms(); } });
 function tModal(html){ $('#vbody').innerHTML=`<div class="tpanel">${html}</div>`; $('#modal').classList.add('on'); }
 function tLogin(){
   tModal(`<h3>Вход для педагога</h3><p style="color:var(--dim);font-size:14px">PIN тот же, что для расписания занятий. После входа откроются зачёт, модерация рейтинга и посещения.</p>
-    <input class="pinin" id="tPin" type="password" inputmode="numeric" maxlength="8" autocomplete="off"><div class="row"><button class="ibtn pri" id="tGo">Войти</button></div><small id="tMsg" style="color:var(--bad)"></small>`);
+    <input class="pinin" id="tPin" type="password" inputmode="numeric" maxlength="8" autocomplete="off"><div class="row"><button class="ibtn pri" id="tGo">Войти</button></div><small id="tMsg" style="color:var(--bad)"></small>
+    <div class="authline">Автор курса: Александр Наумов, 2026. <button type="button" class="tlink" data-terms>Условия</button></div>`);
   const go=async()=>{ const pin=$('#tPin').value.trim(); if(!pin) return; $('#tGo').disabled=true;
     try{ const j=await tapi({op:'login',pin}); TT={token:j.token,user:j.user}; saveTT(); try{ localStorage.setItem('agro_tdev','1'); }catch(e){} applyT(); tPanel('exam'); toast('Здравствуйте!'); }
     catch(e){ $('#tMsg').textContent=e.message; $('#tGo').disabled=false; } };
@@ -2514,7 +2538,8 @@ let tTab='exam', examSel=new Set(), examMin=45, examFilter='';
 async function tPanel(tab){
   if(!TT){ tLogin(); return; } tTab=tab||tTab;
   const head=`<h3>👩‍🏫 Кабинет педагога</h3><div class="seg" id="tSeg"><span class="knob"></span>${[['exam','📝 Зачёт'],['rate','🏆 Рейтинг'],['stat','📈 Посещения'],['lock','🔒 Разделы']].map(([k,t])=>`<button data-t="${k}" class="${tTab===k?'on':''}">${t}</button>`).join('')}</div><div id="tBody"><p style="color:var(--dim)">Загружаю…</p></div>
-    <div class="row" style="margin-top:14px"><button class="ibtn sm" id="tOut">Выйти</button><button class="ibtn sm" id="tHide">Выйти и скрыть кнопку входа</button></div>`;
+    <div class="row" style="margin-top:14px"><button class="ibtn sm" id="tOut">Выйти</button><button class="ibtn sm" id="tHide">Выйти и скрыть кнопку входа</button></div>
+    <div class="authline">Автор курса: Александр Наумов, 2026. <button type="button" class="tlink" data-terms>Условия использования</button></div>`;
   tModal(head);
   const s=$('#tSeg'), b=s.querySelector('button.on'), k=s.querySelector('.knob'); if(b){ k.style.left=b.offsetLeft+'px'; k.style.width=b.offsetWidth+'px'; }
   s.querySelectorAll('button').forEach(x=>x.onclick=()=>tPanel(x.dataset.t));
